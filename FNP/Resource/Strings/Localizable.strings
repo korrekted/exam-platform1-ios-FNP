@@ -25,6 +25,7 @@
 "Splash.Title.Part3" = "experts";
 
 // MARK: Onboarding
+"Onboarding.FailedToSave" = "Failed to save";
 "Onboarding.Skip" = "Skip";
 "Onboarding.Proceed" = "Proceed";
 "Onboarding.Yes" = "Yes";
@@ -36,7 +37,7 @@
 "Onboarding.Slide4.Cell3" = "Extend my knowledge";
 "Onboarding.Slide4.Cell4" = "Resfresh the basics";
 "Onboarding.Slide4.Cell5" = "Try something new";
-"Onboarding.Slide5.Title" = "WHEN ARE YOU TAKING THE EXAM?";
+"Onboarding.WhenTaking.Title" = "WHEN ARE YOU TAKING THE EXAM?";
 "Onboarding.Slide6.Title" = "DESCRIBE YOUR CURRENT LEVEL:";
 "Onboarding.Slide6.Cell1" = "Novice";
 "Onboarding.Slide6.Cell2" = "Intermediate";

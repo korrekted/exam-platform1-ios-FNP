@@ -6,17 +6,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-final class OSlide5View: OSlideView {
-    lazy var skipButton = makeSkipButton()
+final class OSlideWhenTakingView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
     lazy var datePickerView = makeDatePickerView()
     lazy var button = makeButton()
+    lazy var skipButton = makeSkipButton()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var profileManager = ProfileManagerCore()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
         
         makeConstraints()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -24,18 +31,47 @@ final class OSlide5View: OSlideView {
     }
 }
 
+// MARK: Private
+private extension OSlideWhenTakingView {
+    func initialize() {
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+
+                let date = self.datePickerView.date
+                
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd.MM.yyyy"
+                
+                let examDate = formatter.string(from: date)
+                
+                return self.profileManager
+                    .set(examDate: examDate)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .asDriver(onErrorDriveWith: .never())
+            .drive(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Onboarding.FailedToSave".localized, style: .danger)
+                    return
+                }
+
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
+    }
+}
+
 // MARK: Make constraints
-private extension OSlide5View {
+private extension OSlideWhenTakingView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26.scale),
-            skipButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 49.scale : 20.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -17.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 134.scale : 70.scale)
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 117.scale : 53.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -48,28 +84,20 @@ private extension OSlide5View {
             button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26.scale),
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26.scale),
             button.heightAnchor.constraint(equalToConstant: 60.scale),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -70.scale : -30.scale)
+            button.bottomAnchor.constraint(equalTo: skipButton.topAnchor, constant: -14.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            skipButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26.scale),
+            skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26.scale),
+            skipButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -31.scale),
+            skipButton.heightAnchor.constraint(equalToConstant: 25.scale)
         ])
     }
 }
 
 // MARK: Lazy initialization
-private extension OSlide5View {
-    func makeSkipButton() -> UIButton {
-        let attrs = TextAttributes()
-            .textColor(UIColor.black)
-            .font(Fonts.SFProRounded.semiBold(size: 13.scale))
-            .letterSpacing(-0.6.scale)
-            .lineHeight(20.scale)
-        
-        let view = UIButton()
-        view.setAttributedTitle("Onboarding.Skip".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
+private extension OSlideWhenTakingView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
@@ -79,7 +107,7 @@ private extension OSlide5View {
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.Slide5.Title".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.WhenTaking.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -111,13 +139,25 @@ private extension OSlide5View {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
             .font(Fonts.SFProRounded.semiBold(size: 20.scale))
-            .lineHeight(23.scale)
             .textAlignment(.center)
         
         let view = UIButton()
         view.backgroundColor = Appearance.mainColor
         view.layer.cornerRadius = 30.scale
         view.setAttributedTitle("Onboarding.Proceed".localized.attributed(with: attrs), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSkipButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(UIColor.black)
+            .font(Fonts.SFProRounded.regular(size: 20.scale))
+            .textAlignment(.center)
+        
+        let view = UIButton()
+        view.setAttributedTitle("Onboarding.Skip".localized.attributed(with: attrs), for: .normal)
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

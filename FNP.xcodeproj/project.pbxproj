@@ -187,7 +187,7 @@
 		96155F7A268C97C700228151 /* MainStatsDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB0268C97C600228151 /* MainStatsDescriptionView.swift */; };
 		96155F7B268C97C700228151 /* MainStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB1268C97C600228151 /* MainStatsView.swift */; };
 		96155F7C268C97C700228151 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB3268C97C600228151 /* OnboardingViewController.swift */; };
-		96155F7D268C97C700228151 /* OSlide5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB5268C97C600228151 /* OSlide5View.swift */; };
+		96155F7D268C97C700228151 /* OSlideWhenTakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */; };
 		96155F7E268C97C700228151 /* OSlide8View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB6268C97C600228151 /* OSlide8View.swift */; };
 		96155F7F268C97C700228151 /* OProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB8268C97C700228151 /* OProgressView.swift */; };
 		96155F80268C97C700228151 /* OSlide15Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB9268C97C700228151 /* OSlide15Cell.swift */; };
@@ -415,7 +415,7 @@
 		96155EB0268C97C600228151 /* MainStatsDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStatsDescriptionView.swift; sourceTree = "<group>"; };
 		96155EB1268C97C600228151 /* MainStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStatsView.swift; sourceTree = "<group>"; };
 		96155EB3268C97C600228151 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		96155EB5268C97C600228151 /* OSlide5View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide5View.swift; sourceTree = "<group>"; };
+		96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideWhenTakingView.swift; sourceTree = "<group>"; };
 		96155EB6268C97C600228151 /* OSlide8View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide8View.swift; sourceTree = "<group>"; };
 		96155EB8268C97C700228151 /* OProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OProgressView.swift; sourceTree = "<group>"; };
 		96155EB9268C97C700228151 /* OSlide15Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide15Cell.swift; sourceTree = "<group>"; };
@@ -1268,7 +1268,7 @@
 			isa = PBXGroup;
 			children = (
 				96155EB7268C97C700228151 /* Atoms */,
-				96155EB5268C97C600228151 /* OSlide5View.swift */,
+				96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */,
 				96155EB6268C97C600228151 /* OSlide8View.swift */,
 				96155EBF268C97C700228151 /* OSlide14View.swift */,
 				96155EC0268C97C700228151 /* OSlide4View.swift */,
@@ -1784,7 +1784,7 @@
 				96155EF0268C97C700228151 /* PaygateMainOffer.swift in Sources */,
 				96155EEA268C97C700228151 /* PaygateMapper.swift in Sources */,
 				96155F85268C97C700228151 /* OSlide14View.swift in Sources */,
-				96155F7D268C97C700228151 /* OSlide5View.swift in Sources */,
+				96155F7D268C97C700228151 /* OSlideWhenTakingView.swift in Sources */,
 				96155EF9268C97C700228151 /* TestStatsManagerCore.swift in Sources */,
 				96155EFC268C97C700228151 /* Test.swift in Sources */,
 				96155EF5268C97C700228151 /* PaygateManager.swift in Sources */,
