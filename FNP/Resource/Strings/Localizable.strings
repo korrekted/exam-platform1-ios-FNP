@@ -71,6 +71,7 @@
 "Onboarding.Welcome.Title3" = "PASS FIRST TIME";
 "Onboarding.Welcome.Subtitle3" = "Once you’re really close to 100% pass rate go for the real exam and pass with flying colors!";
 "Onboarding.Welcome.GetStarted" = "Let’s do it";
+"Onboarding.References.Title" = "COURSE REFERENCES";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";

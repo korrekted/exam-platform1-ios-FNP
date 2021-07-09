@@ -20,7 +20,4 @@ protocol ProfileManager {
     
     // MARK: Test Mode
     func obtainTestMode() -> Single<TestMode?>
-    
-    // MARK: References
-    func retrieveReferences(forceUpdate: Bool) -> Single<[Reference]>
 }

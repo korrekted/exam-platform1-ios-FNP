@@ -225,6 +225,9 @@
 		966FE15E2698EFB100B8FC20 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE15D2698EFB100B8FC20 /* Reference.swift */; };
 		966FE1612698EFFA00B8FC20 /* GetReferencesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1602698EFFA00B8FC20 /* GetReferencesRequest.swift */; };
 		966FE1632698F07D00B8FC20 /* GetReferencesResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1622698F07D00B8FC20 /* GetReferencesResponseMapper.swift */; };
+		966FE1652698F6CF00B8FC20 /* OSlideReferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1642698F6CF00B8FC20 /* OSlideReferencesView.swift */; };
+		966FE1682698FB5400B8FC20 /* ReferencesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1672698FB5400B8FC20 /* ReferencesTableView.swift */; };
+		966FE16A2698FC7A00B8FC20 /* ReferencesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1692698FC7A00B8FC20 /* ReferencesTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -451,6 +454,9 @@
 		966FE15D2698EFB100B8FC20 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		966FE1602698EFFA00B8FC20 /* GetReferencesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReferencesRequest.swift; sourceTree = "<group>"; };
 		966FE1622698F07D00B8FC20 /* GetReferencesResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReferencesResponseMapper.swift; sourceTree = "<group>"; };
+		966FE1642698F6CF00B8FC20 /* OSlideReferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideReferencesView.swift; sourceTree = "<group>"; };
+		966FE1672698FB5400B8FC20 /* ReferencesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesTableView.swift; sourceTree = "<group>"; };
+		966FE1692698FC7A00B8FC20 /* ReferencesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencesTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -780,6 +786,7 @@
 		96155E14268C97C600228151 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				966FE15D2698EFB100B8FC20 /* Reference.swift */,
 				96155E15268C97C600228151 /* Course.swift */,
 			);
 			path = Models;
@@ -788,6 +795,7 @@
 		96155E16268C97C600228151 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				966FE15F2698EFE900B8FC20 /* GetReferences */,
 				96155E17268C97C600228151 /* GetCourcesRequest.swift */,
 				96155E18268C97C600228151 /* GetCourcesResponseMapper.swift */,
 			);
@@ -1270,6 +1278,7 @@
 				96155EC4268C97C700228151 /* OSlide7View.swift */,
 				96155EC6268C97C700228151 /* OSlide6View.swift */,
 				966FE14A2698DC0900B8FC20 /* OSlideWelcomeView.swift */,
+				966FE1642698F6CF00B8FC20 /* OSlideReferencesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1277,6 +1286,7 @@
 		96155EB7268C97C700228151 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				966FE1662698FB3B00B8FC20 /* References */,
 				966FE1412698DB5E00B8FC20 /* Welcome */,
 				96155EBA268C97C700228151 /* Source */,
 				96155EB8268C97C700228151 /* OProgressView.swift */,
@@ -1355,7 +1365,6 @@
 			isa = PBXGroup;
 			children = (
 				966FE1502698ED5100B8FC20 /* TestMode.swift */,
-				966FE15D2698EFB100B8FC20 /* Reference.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1372,7 +1381,6 @@
 		966FE14F2698ED0F00B8FC20 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				966FE15F2698EFE900B8FC20 /* GetReferences */,
 				966FE1522698EDA100B8FC20 /* GetTestMode */,
 				966FE1572698EDD600B8FC20 /* SetRequest.swift */,
 			);
@@ -1395,6 +1403,15 @@
 				966FE1622698F07D00B8FC20 /* GetReferencesResponseMapper.swift */,
 			);
 			path = GetReferences;
+			sourceTree = "<group>";
+		};
+		966FE1662698FB3B00B8FC20 /* References */ = {
+			isa = PBXGroup;
+			children = (
+				966FE1672698FB5400B8FC20 /* ReferencesTableView.swift */,
+				966FE1692698FC7A00B8FC20 /* ReferencesTableCell.swift */,
+			);
+			path = References;
 			sourceTree = "<group>";
 		};
 		AD9B441B758300C20DC116EE /* Pods */ = {
@@ -1571,6 +1588,7 @@
 				96155EF6268C97C700228151 /* TestStats.swift in Sources */,
 				96155EE9268C97C700228151 /* MonetizationManager.swift in Sources */,
 				96155EE6268C97C700228151 /* RateManagerCore.swift in Sources */,
+				966FE1682698FB5400B8FC20 /* ReferencesTableView.swift in Sources */,
 				96155F09268C97C700228151 /* QuestionManagerCore.swift in Sources */,
 				96155F1F268C97C700228151 /* STLinkView.swift in Sources */,
 				96155F52268C97C700228151 /* PaygateViewController.swift in Sources */,
@@ -1596,6 +1614,7 @@
 				96155EE5268C97C700228151 /* Appearance.swift in Sources */,
 				96155EDC268C97C700228151 /* TapAreaButton.swift in Sources */,
 				96155EE1268C97C700228151 /* GradientView.swift in Sources */,
+				966FE16A2698FC7A00B8FC20 /* ReferencesTableCell.swift in Sources */,
 				96155F60268C97C700228151 /* TestStatsFilter.swift in Sources */,
 				96155F07268C97C700228151 /* QuestionManager.swift in Sources */,
 				966FE1432698DB6C00B8FC20 /* WelcomeSlide1View.swift in Sources */,
@@ -1607,6 +1626,7 @@
 				96155F33268C97C700228151 /* StudyCollectionView.swift in Sources */,
 				96155F54268C97C700228151 /* PaygateMainInfoCell.swift in Sources */,
 				96155EF3268C97C700228151 /* GetMonetizationConfigRequest.swift in Sources */,
+				966FE1652698F6CF00B8FC20 /* OSlideReferencesView.swift in Sources */,
 				96155F55268C97C700228151 /* PaygateOptionView.swift in Sources */,
 				96155ED4268C97C700228151 /* ScreenSize.swift in Sources */,
 				96155F25268C97C700228151 /* SettingsViewController.swift in Sources */,

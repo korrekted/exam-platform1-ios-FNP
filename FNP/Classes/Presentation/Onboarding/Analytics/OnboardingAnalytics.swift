@@ -12,6 +12,8 @@ final class OnboardingAnalytics {
         switch step {
         case .welcome:
             name = "Welcome Screen"
+        case .references:
+            name = "References Screen"
         case .slide4:
             name = "Goals Screen"
         case .slide5:
