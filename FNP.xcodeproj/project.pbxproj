@@ -222,6 +222,9 @@
 		966FE1582698EDD600B8FC20 /* SetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1572698EDD600B8FC20 /* SetRequest.swift */; };
 		966FE15A2698EE5300B8FC20 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1592698EE5300B8FC20 /* ProfileManager.swift */; };
 		966FE15C2698EE7500B8FC20 /* ProfileManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE15B2698EE7500B8FC20 /* ProfileManagerCore.swift */; };
+		966FE15E2698EFB100B8FC20 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE15D2698EFB100B8FC20 /* Reference.swift */; };
+		966FE1612698EFFA00B8FC20 /* GetReferencesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1602698EFFA00B8FC20 /* GetReferencesRequest.swift */; };
+		966FE1632698F07D00B8FC20 /* GetReferencesResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1622698F07D00B8FC20 /* GetReferencesResponseMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -445,6 +448,9 @@
 		966FE1572698EDD600B8FC20 /* SetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRequest.swift; sourceTree = "<group>"; };
 		966FE1592698EE5300B8FC20 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		966FE15B2698EE7500B8FC20 /* ProfileManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerCore.swift; sourceTree = "<group>"; };
+		966FE15D2698EFB100B8FC20 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
+		966FE1602698EFFA00B8FC20 /* GetReferencesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReferencesRequest.swift; sourceTree = "<group>"; };
+		966FE1622698F07D00B8FC20 /* GetReferencesResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReferencesResponseMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1349,6 +1355,7 @@
 			isa = PBXGroup;
 			children = (
 				966FE1502698ED5100B8FC20 /* TestMode.swift */,
+				966FE15D2698EFB100B8FC20 /* Reference.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1365,6 +1372,7 @@
 		966FE14F2698ED0F00B8FC20 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				966FE15F2698EFE900B8FC20 /* GetReferences */,
 				966FE1522698EDA100B8FC20 /* GetTestMode */,
 				966FE1572698EDD600B8FC20 /* SetRequest.swift */,
 			);
@@ -1378,6 +1386,15 @@
 				966FE1552698EDC000B8FC20 /* GetTestModeResponseMapper.swift */,
 			);
 			path = GetTestMode;
+			sourceTree = "<group>";
+		};
+		966FE15F2698EFE900B8FC20 /* GetReferences */ = {
+			isa = PBXGroup;
+			children = (
+				966FE1602698EFFA00B8FC20 /* GetReferencesRequest.swift */,
+				966FE1622698F07D00B8FC20 /* GetReferencesResponseMapper.swift */,
+			);
+			path = GetReferences;
 			sourceTree = "<group>";
 		};
 		AD9B441B758300C20DC116EE /* Pods */ = {
@@ -1562,6 +1579,7 @@
 				96155F23268C97C700228151 /* SettingsTableView.swift in Sources */,
 				96155F1C268C97C700228151 /* SettingsView.swift in Sources */,
 				96155EE2268C97C700228151 /* AppDelegate.swift in Sources */,
+				966FE1612698EFFA00B8FC20 /* GetReferencesRequest.swift in Sources */,
 				96155F69268C97C700228151 /* CoursesViewController.swift in Sources */,
 				96155EEB268C97C700228151 /* GetMonetizationResponseMapper.swift in Sources */,
 				96155F01268C97C700228151 /* GetFailedSetRequest.swift in Sources */,
@@ -1597,6 +1615,7 @@
 				96155F22268C97C700228151 /* STUnlockCell.swift in Sources */,
 				96155F20268C97C700228151 /* STLinksCell.swift in Sources */,
 				96155EF8268C97C700228151 /* GetTestStatsResponseMapper.swift in Sources */,
+				966FE15E2698EFB100B8FC20 /* Reference.swift in Sources */,
 				96155F31268C97C700228151 /* SCBriefDaysView.swift in Sources */,
 				966FE1472698DB9400B8FC20 /* WelcomeSlide3View.swift in Sources */,
 				96155F38268C97C700228151 /* TabItemView.swift in Sources */,
@@ -1674,6 +1693,7 @@
 				96155F0A268C97C700228151 /* QuestionManagerDelagate.swift in Sources */,
 				96155F4C268C97C700228151 /* QuestionContentCollectionView.swift in Sources */,
 				96155ECD268C97C700228151 /* UITapGestureRecognizerExtension.swift in Sources */,
+				966FE1632698F07D00B8FC20 /* GetReferencesResponseMapper.swift in Sources */,
 				96155F61268C97C700228151 /* TestStatsViewModel.swift in Sources */,
 				96155EDB268C97C700228151 /* NursingNavigationControllerSettings.swift in Sources */,
 				96155F4A268C97C700228151 /* TestViewController.swift in Sources */,
