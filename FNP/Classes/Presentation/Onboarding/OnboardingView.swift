@@ -9,13 +9,13 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case slide1, slide4, slide5, slide6, slide7, slide8, slide9, slide14, slide15
+        case welcome, slide4, slide5, slide6, slide7, slide8, slide9, slide14, slide15
     }
     
     var didFinish: (() -> Void)?
     var didChangedSlide: ((Step) -> Void)?
     
-    var step = Step.slide1 {
+    var step = Step.welcome {
         didSet {
             scroll()
         }
@@ -25,7 +25,7 @@ final class OnboardingView: UIView {
     
     private lazy var contentViews: [OSlideView] = {
         [
-            OSlide1View(step: .slide1),
+            OSlideWelcomeView(step: .welcome),
             OSlide4View(step: .slide4),
             OSlide5View(step: .slide5),
             OSlide6View(step: .slide6),

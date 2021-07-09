@@ -41,7 +41,7 @@ final class OnboardingViewController: UIViewController {
                 return
             }
             
-            if step == .slide1 {
+            if step == .welcome {
                 this.goToCourses()
             }
         }
@@ -59,7 +59,9 @@ extension OnboardingViewController {
 // MARK: API
 extension OnboardingViewController {
     static func wasViewed() -> Bool {
-        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
+        // TODO
+        false
+//        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
     }
 }
 

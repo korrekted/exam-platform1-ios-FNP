@@ -200,7 +200,6 @@
 		96155F88268C97C700228151 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC2268C97C700228151 /* OSlideView.swift */; };
 		96155F89268C97C700228151 /* OSlide15View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC3268C97C700228151 /* OSlide15View.swift */; };
 		96155F8A268C97C700228151 /* OSlide7View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC4268C97C700228151 /* OSlide7View.swift */; };
-		96155F8B268C97C700228151 /* OSlide1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC5268C97C700228151 /* OSlide1View.swift */; };
 		96155F8C268C97C700228151 /* OSlide6View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC6268C97C700228151 /* OSlide6View.swift */; };
 		96155F8D268C97C700228151 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC7268C97C700228151 /* OnboardingView.swift */; };
 		96155F8E268C97C700228151 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC8268C97C700228151 /* OnboardingViewModel.swift */; };
@@ -212,6 +211,11 @@
 		96155F9D268C97F700228151 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96155F9C268C97F700228151 /* Localizable.strings */; };
 		96155FA1268C995A00228151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96155FA0268C995A00228151 /* GoogleService-Info.plist */; };
 		96155FA3268C9A1B00228151 /* Onboarding.Chart.json in Resources */ = {isa = PBXBuildFile; fileRef = 96155FA2268C9A1B00228151 /* Onboarding.Chart.json */; };
+		966FE1432698DB6C00B8FC20 /* WelcomeSlide1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */; };
+		966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */; };
+		966FE1472698DB9400B8FC20 /* WelcomeSlide3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */; };
+		966FE1492698DBA800B8FC20 /* WelcomeSlideIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1482698DBA800B8FC20 /* WelcomeSlideIndicatorView.swift */; };
+		966FE14B2698DC0900B8FC20 /* OSlideWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE14A2698DC0900B8FC20 /* OSlideWelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -412,7 +416,6 @@
 		96155EC2268C97C700228151 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		96155EC3268C97C700228151 /* OSlide15View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide15View.swift; sourceTree = "<group>"; };
 		96155EC4268C97C700228151 /* OSlide7View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide7View.swift; sourceTree = "<group>"; };
-		96155EC5268C97C700228151 /* OSlide1View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide1View.swift; sourceTree = "<group>"; };
 		96155EC6268C97C700228151 /* OSlide6View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide6View.swift; sourceTree = "<group>"; };
 		96155EC7268C97C700228151 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		96155EC8268C97C700228151 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -425,6 +428,11 @@
 		96155F9C268C97F700228151 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		96155FA0268C995A00228151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96155FA2268C9A1B00228151 /* Onboarding.Chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Chart.json; sourceTree = "<group>"; };
+		966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide1View.swift; sourceTree = "<group>"; };
+		966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide2View.swift; sourceTree = "<group>"; };
+		966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide3View.swift; sourceTree = "<group>"; };
+		966FE1482698DBA800B8FC20 /* WelcomeSlideIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlideIndicatorView.swift; sourceTree = "<group>"; };
+		966FE14A2698DC0900B8FC20 /* OSlideWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideWelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1220,11 +1228,11 @@
 		96155EB2268C97C600228151 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				96155EB3268C97C600228151 /* OnboardingViewController.swift */,
+				96155EC9268C97C700228151 /* Analytics */,
 				96155EB4268C97C600228151 /* Views */,
+				96155EB3268C97C600228151 /* OnboardingViewController.swift */,
 				96155EC7268C97C700228151 /* OnboardingView.swift */,
 				96155EC8268C97C700228151 /* OnboardingViewModel.swift */,
-				96155EC9268C97C700228151 /* Analytics */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -1232,17 +1240,17 @@
 		96155EB4268C97C600228151 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96155EB7268C97C700228151 /* Atoms */,
 				96155EB5268C97C600228151 /* OSlide5View.swift */,
 				96155EB6268C97C600228151 /* OSlide8View.swift */,
-				96155EB7268C97C700228151 /* Atoms */,
 				96155EBF268C97C700228151 /* OSlide14View.swift */,
 				96155EC0268C97C700228151 /* OSlide4View.swift */,
 				96155EC1268C97C700228151 /* OSlide9View.swift */,
 				96155EC2268C97C700228151 /* OSlideView.swift */,
 				96155EC3268C97C700228151 /* OSlide15View.swift */,
 				96155EC4268C97C700228151 /* OSlide7View.swift */,
-				96155EC5268C97C700228151 /* OSlide1View.swift */,
 				96155EC6268C97C700228151 /* OSlide6View.swift */,
+				966FE14A2698DC0900B8FC20 /* OSlideWelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1250,9 +1258,10 @@
 		96155EB7268C97C700228151 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				966FE1412698DB5E00B8FC20 /* Welcome */,
+				96155EBA268C97C700228151 /* Source */,
 				96155EB8268C97C700228151 /* OProgressView.swift */,
 				96155EB9268C97C700228151 /* OSlide15Cell.swift */,
-				96155EBA268C97C700228151 /* Source */,
 				96155EBC268C97C700228151 /* OSlide4Cell.swift */,
 				96155EBD268C97C700228151 /* OSlide9TagView.swift */,
 				96155EBE268C97C700228151 /* OSlide6Cell.swift */,
@@ -1300,6 +1309,17 @@
 				96155F9C268C97F700228151 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		966FE1412698DB5E00B8FC20 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */,
+				966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */,
+				966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */,
+				966FE1482698DBA800B8FC20 /* WelcomeSlideIndicatorView.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		AD9B441B758300C20DC116EE /* Pods */ = {
@@ -1500,6 +1520,7 @@
 				96155EE1268C97C700228151 /* GradientView.swift in Sources */,
 				96155F60268C97C700228151 /* TestStatsFilter.swift in Sources */,
 				96155F07268C97C700228151 /* QuestionManager.swift in Sources */,
+				966FE1432698DB6C00B8FC20 /* WelcomeSlide1View.swift in Sources */,
 				96155F89268C97C700228151 /* OSlide15View.swift in Sources */,
 				96155F8C268C97C700228151 /* OSlide6View.swift in Sources */,
 				96155F34268C97C700228151 /* StudyView.swift in Sources */,
@@ -1517,6 +1538,7 @@
 				96155F20268C97C700228151 /* STLinksCell.swift in Sources */,
 				96155EF8268C97C700228151 /* GetTestStatsResponseMapper.swift in Sources */,
 				96155F31268C97C700228151 /* SCBriefDaysView.swift in Sources */,
+				966FE1472698DB9400B8FC20 /* WelcomeSlide3View.swift in Sources */,
 				96155F38268C97C700228151 /* TabItemView.swift in Sources */,
 				96155F87268C97C700228151 /* OSlide9View.swift in Sources */,
 				96155F51268C97C700228151 /* PaygateView.swift in Sources */,
@@ -1551,6 +1573,7 @@
 				96155F45268C97C700228151 /* TestType.swift in Sources */,
 				96155F04268C97C700228151 /* SendAnswerRequest.swift in Sources */,
 				96155F3F268C97C700228151 /* AnswersCell.swift in Sources */,
+				966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */,
 				96155F73268C97C700228151 /* PassRateCell.swift in Sources */,
 				96155F21268C97C700228151 /* STCourseCell.swift in Sources */,
 				96155F57268C97C700228151 /* TestStatsViewController.swift in Sources */,
@@ -1608,6 +1631,7 @@
 				96155ED9268C97C700228151 /* Toast.swift in Sources */,
 				96155EFE268C97C700228151 /* GetTestConfigResponseMapper.swift in Sources */,
 				96155ED0268C97C700228151 /* StringExtension.swift in Sources */,
+				966FE14B2698DC0900B8FC20 /* OSlideWelcomeView.swift in Sources */,
 				96155F14268C97C700228151 /* GetBriefResponseMapper.swift in Sources */,
 				96155F6E268C97C700228151 /* StatsViewController.swift in Sources */,
 				96155F83268C97C700228151 /* OSlide9TagView.swift in Sources */,
@@ -1640,6 +1664,7 @@
 				96155F6D268C97C700228151 /* StatsViewModel.swift in Sources */,
 				96155F0B268C97C700228151 /* Course.swift in Sources */,
 				96155F10268C97C700228151 /* CoursesManagerMediator.swift in Sources */,
+				966FE1492698DBA800B8FC20 /* WelcomeSlideIndicatorView.swift in Sources */,
 				96155F00268C97C700228151 /* GetTestConfigRequest.swift in Sources */,
 				96155F43268C97C700228151 /* TestBottomButtonState.swift in Sources */,
 				96155EE3268C97C700228151 /* RxActivityIndicator.swift in Sources */,
@@ -1656,7 +1681,6 @@
 				96155EEA268C97C700228151 /* PaygateMapper.swift in Sources */,
 				96155F85268C97C700228151 /* OSlide14View.swift in Sources */,
 				96155F7D268C97C700228151 /* OSlide5View.swift in Sources */,
-				96155F8B268C97C700228151 /* OSlide1View.swift in Sources */,
 				96155EF9268C97C700228151 /* TestStatsManagerCore.swift in Sources */,
 				96155EFC268C97C700228151 /* Test.swift in Sources */,
 				96155EF5268C97C700228151 /* PaygateManager.swift in Sources */,

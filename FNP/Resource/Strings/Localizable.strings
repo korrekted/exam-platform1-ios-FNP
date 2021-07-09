@@ -29,9 +29,7 @@
 "Onboarding.Proceed" = "Proceed";
 "Onboarding.Yes" = "Yes";
 "Onboarding.No" = "No";
-"Onboarding.Slide1.Text1" = "PERSONAL STUDY PLAN 98% PASS RATE";
-"Onboarding.Slide1.Text2" = "Practice exams created by certified experts to help you pass on the first attempt";
-"Onboarding.Slide1.Button" = "Let’s do it";
+"Onboarding.Next" = "Next";
 "Onboarding.Slide4.Title" = "WHAT ARE YOUR GOALS?";
 "Onboarding.Slide4.Cell1" = "Pass the exam";
 "Onboarding.Slide4.Cell2" = "Become a better specialist";
@@ -66,6 +64,13 @@
 "Onboarding.Slide15.Cell3" = "Different courses";
 "Onboarding.Slide15.Cell4" = "reminders and notifications";
 "Onboarding.Slide15.Button" = "Let’s go!";
+"Onboarding.Welcome.Title1" = "PERSONAL STUDY PLAN";
+"Onboarding.Welcome.Subtitle1" = "The question bank is divided into sets according to your skills, requirements and settings";
+"Onboarding.Welcome.Title2" = "98% PASS RATE";
+"Onboarding.Welcome.Subtitle2" = "Easily track your pass rate and progress. Gain confidence with every step you take!";
+"Onboarding.Welcome.Title3" = "PASS FIRST TIME";
+"Onboarding.Welcome.Subtitle3" = "Once you’re really close to 100% pass rate go for the real exam and pass with flying colors!";
+"Onboarding.Welcome.GetStarted" = "Let’s do it";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";
