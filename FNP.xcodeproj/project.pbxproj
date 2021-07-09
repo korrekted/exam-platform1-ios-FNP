@@ -195,7 +195,7 @@
 		96155F83268C97C700228151 /* OSlide9TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBD268C97C700228151 /* OSlide9TagView.swift */; };
 		96155F84268C97C700228151 /* OSlide6Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBE268C97C700228151 /* OSlide6Cell.swift */; };
 		96155F85268C97C700228151 /* OSlide14View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBF268C97C700228151 /* OSlide14View.swift */; };
-		96155F86268C97C700228151 /* OSlide4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC0268C97C700228151 /* OSlide4View.swift */; };
+		96155F86268C97C700228151 /* OSlideGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC0268C97C700228151 /* OSlideGoalsView.swift */; };
 		96155F87268C97C700228151 /* OSlide9View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC1268C97C700228151 /* OSlide9View.swift */; };
 		96155F88268C97C700228151 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC2268C97C700228151 /* OSlideView.swift */; };
 		96155F89268C97C700228151 /* OSlide15View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC3268C97C700228151 /* OSlide15View.swift */; };
@@ -423,7 +423,7 @@
 		96155EBD268C97C700228151 /* OSlide9TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide9TagView.swift; sourceTree = "<group>"; };
 		96155EBE268C97C700228151 /* OSlide6Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide6Cell.swift; sourceTree = "<group>"; };
 		96155EBF268C97C700228151 /* OSlide14View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide14View.swift; sourceTree = "<group>"; };
-		96155EC0268C97C700228151 /* OSlide4View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide4View.swift; sourceTree = "<group>"; };
+		96155EC0268C97C700228151 /* OSlideGoalsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideGoalsView.swift; sourceTree = "<group>"; };
 		96155EC1268C97C700228151 /* OSlide9View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide9View.swift; sourceTree = "<group>"; };
 		96155EC2268C97C700228151 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		96155EC3268C97C700228151 /* OSlide15View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide15View.swift; sourceTree = "<group>"; };
@@ -1271,7 +1271,7 @@
 				96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */,
 				96155EB6268C97C600228151 /* OSlide8View.swift */,
 				96155EBF268C97C700228151 /* OSlide14View.swift */,
-				96155EC0268C97C700228151 /* OSlide4View.swift */,
+				96155EC0268C97C700228151 /* OSlideGoalsView.swift */,
 				96155EC1268C97C700228151 /* OSlide9View.swift */,
 				96155EC2268C97C700228151 /* OSlideView.swift */,
 				96155EC3268C97C700228151 /* OSlide15View.swift */,
@@ -1762,7 +1762,7 @@
 				96155F56268C97C700228151 /* PaygateSpecialOfferView.swift in Sources */,
 				96155F1B268C97C700228151 /* SessionManager.swift in Sources */,
 				96155F4B268C97C700228151 /* QuestionTableView.swift in Sources */,
-				96155F86268C97C700228151 /* OSlide4View.swift in Sources */,
+				96155F86268C97C700228151 /* OSlideGoalsView.swift in Sources */,
 				96155ED5268C97C700228151 /* Fonts.swift in Sources */,
 				96155F6D268C97C700228151 /* StatsViewModel.swift in Sources */,
 				96155F0B268C97C700228151 /* Course.swift in Sources */,

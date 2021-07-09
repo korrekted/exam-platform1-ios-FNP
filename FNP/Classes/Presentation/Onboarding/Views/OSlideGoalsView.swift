@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class OSlide4View: OSlideView {
+final class OSlideGoalsView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
-    lazy var cell1 = makeCell(title: "Onboarding.Slide4.Cell1", tag: 1)
-    lazy var cell2 = makeCell(title: "Onboarding.Slide4.Cell2", tag: 2)
-    lazy var cell3 = makeCell(title: "Onboarding.Slide4.Cell3", tag: 3)
-    lazy var cell4 = makeCell(title: "Onboarding.Slide4.Cell4", tag: 4)
-    lazy var cell5 = makeCell(title: "Onboarding.Slide4.Cell5", tag: 5)
+    lazy var cell1 = makeCell(title: "Onboarding.Goals.Cell1", tag: 1)
+    lazy var cell2 = makeCell(title: "Onboarding.Goals.Cell2", tag: 2)
+    lazy var cell3 = makeCell(title: "Onboarding.Goals.Cell3", tag: 3)
+    lazy var cell4 = makeCell(title: "Onboarding.Goals.Cell4", tag: 4)
+    lazy var cell5 = makeCell(title: "Onboarding.Goals.Cell5", tag: 5)
     lazy var button = makeButton()
     lazy var imageView = makeImageView()
     
@@ -29,7 +29,7 @@ final class OSlide4View: OSlideView {
 }
 
 // MARK: Private
-private extension OSlide4View {
+private extension OSlideGoalsView {
     @objc
     func selected(tapGesture: UITapGestureRecognizer) {
         guard let cell = tapGesture.view as? OSlide4Cell else {
@@ -45,7 +45,7 @@ private extension OSlide4View {
 }
 
 // MARK: Make constraints
-private extension OSlide4View {
+private extension OSlideGoalsView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
@@ -100,7 +100,7 @@ private extension OSlide4View {
 }
 
 // MARK: Lazy initialization
-private extension OSlide4View {
+private extension OSlideGoalsView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
@@ -110,7 +110,7 @@ private extension OSlide4View {
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.Slide4.Title".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.Goals.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -150,7 +150,7 @@ private extension OSlide4View {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
         view.isUserInteractionEnabled = false
-        view.image = UIImage(named: "Onboarding.Slide4")
+        view.image = UIImage(named: "Onboarding.Goals")
         view.clipsToBounds = true
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -14,10 +14,10 @@ final class OnboardingAnalytics {
             name = "Welcome Screen"
         case .references:
             name = "References Screen"
-        case .slide4:
-            name = "Goals Screen"
         case .whenTaking:
             name = "When Exam Screen"
+        case .goals:
+            name = "Goals Screen"
         case .slide6:
             name = "Level Screen"
         case .slide7:
