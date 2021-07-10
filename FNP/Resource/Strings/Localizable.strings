@@ -73,6 +73,13 @@
 "Onboarding.Welcome.Subtitle3" = "Once you’re really close to 100% pass rate go for the real exam and pass with flying colors!";
 "Onboarding.Welcome.GetStarted" = "Let’s do it";
 "Onboarding.References.Title" = "COURSE REFERENCES";
+"Onboarding.Modes.Title" = "WHAT EXAM MODE DO\nYOU PREFER?";
+"Onboarding.Modes.Cell1.Title" = "Full support";
+"Onboarding.Modes.Cell1.Subtitle" = "After the answer you’ll see the\ncorrect and the explanation";
+"Onboarding.Modes.Cell2.Title" = "Without explanations";
+"Onboarding.Modes.Cell2.Subtitle" = "See the correct answer before\nmoving on to the next question";
+"Onboarding.Modes.Cell3.Title" = "Exam-style";
+"Onboarding.Modes.Cell3.Subtitle" = "See the results only after\nanswering all questions";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";
