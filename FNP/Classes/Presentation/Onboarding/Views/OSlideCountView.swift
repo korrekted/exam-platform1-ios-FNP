@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-final class OSlide8View: OSlideView {
+final class OSlideCountView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
     lazy var imageView = makeImageView()
     lazy var slider = makeSlider()
@@ -15,10 +17,15 @@ final class OSlide8View: OSlideView {
     
     private lazy var valueLabel = makeValueLabel()
     
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var profileManager = ProfileManagerCore()
+    
     override init(step: OnboardingView.Step) {
         super.init(step: step)
         
         makeConstraints()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -33,17 +40,43 @@ final class OSlide8View: OSlideView {
 }
 
 // MARK: Private
-private extension OSlide8View {
+private extension OSlideCountView {
+    func initialize() {
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+
+                let count = Int(self.slider.value)
+                
+                return self.profileManager
+                    .set(testNumber: count)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .asDriver(onErrorDriveWith: .never())
+            .drive(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Onboarding.FailedToSave".localized, style: .danger)
+                    return
+                }
+
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
+    }
+    
     @objc
     func update(sender: UISlider) {
         sender.value = round(sender.value)
         
         if slider.value <= 2 {
-            imageView.image = UIImage(named: "Onboarding.Slide8.Image1")
+            imageView.image = UIImage(named: "Onboarding.SlideCount.Image1")
         } else if slider.value <= 5 {
-            imageView.image = UIImage(named: "Onboarding.Slide8.Image2")
+            imageView.image = UIImage(named: "Onboarding.SlideCount.Image2")
         } else {
-            imageView.image = UIImage(named: "Onboarding.Slide8.Image3")
+            imageView.image = UIImage(named: "Onboarding.SlideCount.Image3")
         }
         
         valueLabel.text = sender.value >= 7 ? "7+" : String(Int(sender.value))
@@ -56,7 +89,7 @@ private extension OSlide8View {
 }
 
 // MARK: Make constraints
-private extension OSlide8View {
+private extension OSlideCountView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
@@ -66,9 +99,9 @@ private extension OSlide8View {
         
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 272.scale),
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 245.scale : 180.scale),
-            imageView.widthAnchor.constraint(equalToConstant: 220.scale)
+            imageView.heightAnchor.constraint(equalToConstant: 285.scale),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 270.scale : 205.scale),
+            imageView.widthAnchor.constraint(equalToConstant: 225.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -87,7 +120,7 @@ private extension OSlide8View {
 }
 
 // MARK: Lazy initialization
-private extension OSlide8View {
+private extension OSlideCountView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
@@ -97,7 +130,7 @@ private extension OSlide8View {
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.Slide8.Title".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.SlideCount.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -143,7 +176,6 @@ private extension OSlide8View {
         view.backgroundColor = Appearance.mainColor
         view.layer.cornerRadius = 30.scale
         view.setAttributedTitle("Onboarding.Proceed".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

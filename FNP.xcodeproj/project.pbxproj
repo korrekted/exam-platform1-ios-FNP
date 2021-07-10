@@ -188,7 +188,7 @@
 		96155F7B268C97C700228151 /* MainStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB1268C97C600228151 /* MainStatsView.swift */; };
 		96155F7C268C97C700228151 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB3268C97C600228151 /* OnboardingViewController.swift */; };
 		96155F7D268C97C700228151 /* OSlideWhenTakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */; };
-		96155F7E268C97C700228151 /* OSlide8View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB6268C97C600228151 /* OSlide8View.swift */; };
+		96155F7E268C97C700228151 /* OSlideCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB6268C97C600228151 /* OSlideCountView.swift */; };
 		96155F7F268C97C700228151 /* OProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB8268C97C700228151 /* OProgressView.swift */; };
 		96155F80268C97C700228151 /* OSlide15Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB9268C97C700228151 /* OSlide15Cell.swift */; };
 		96155F82268C97C700228151 /* OSlide4Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBC268C97C700228151 /* OSlide4Cell.swift */; };
@@ -419,7 +419,7 @@
 		96155EB1268C97C600228151 /* MainStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStatsView.swift; sourceTree = "<group>"; };
 		96155EB3268C97C600228151 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideWhenTakingView.swift; sourceTree = "<group>"; };
-		96155EB6268C97C600228151 /* OSlide8View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide8View.swift; sourceTree = "<group>"; };
+		96155EB6268C97C600228151 /* OSlideCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideCountView.swift; sourceTree = "<group>"; };
 		96155EB8268C97C700228151 /* OProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OProgressView.swift; sourceTree = "<group>"; };
 		96155EB9268C97C700228151 /* OSlide15Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide15Cell.swift; sourceTree = "<group>"; };
 		96155EBC268C97C700228151 /* OSlide4Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide4Cell.swift; sourceTree = "<group>"; };
@@ -1275,7 +1275,7 @@
 			children = (
 				96155EB7268C97C700228151 /* Atoms */,
 				96155EB5268C97C600228151 /* OSlideWhenTakingView.swift */,
-				96155EB6268C97C600228151 /* OSlide8View.swift */,
+				96155EB6268C97C600228151 /* OSlideCountView.swift */,
 				96155EBF268C97C700228151 /* OSlide14View.swift */,
 				96155EC0268C97C700228151 /* OSlideGoalsView.swift */,
 				96155EC1268C97C700228151 /* OSlide9View.swift */,
@@ -1763,7 +1763,7 @@
 				96155F5D268C97C700228151 /* TestStatsAnswer.swift in Sources */,
 				96155ECF268C97C700228151 /* UIEdgeInsets+Extension.swift in Sources */,
 				96155F74268C97C700228151 /* CourseProgressCell.swift in Sources */,
-				96155F7E268C97C700228151 /* OSlide8View.swift in Sources */,
+				96155F7E268C97C700228151 /* OSlideCountView.swift in Sources */,
 				966FE1562698EDC000B8FC20 /* GetTestModeResponseMapper.swift in Sources */,
 				96155EE8268C97C700228151 /* PaygateManagerCore.swift in Sources */,
 				96155F37268C97C700228151 /* CourseViewCoordinator.swift in Sources */,

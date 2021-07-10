@@ -43,21 +43,6 @@ final class OSlideModesView: OSlideView {
 
 // MARK: Private
 private extension OSlideModesView {
-    @objc
-    func selected(tapGesture: UITapGestureRecognizer) {
-        guard let cell = tapGesture.view as? OModeCell else {
-            return
-        }
-        
-        [
-            fullSupportCell,
-            withoutExplanationsCell,
-            examStyleCell
-        ].forEach { $0.isSelected = false }
-        
-        cell.isSelected = true
-    }
-    
     func initialize() {
         button.rx.tap
             .flatMapLatest { [weak self] _ -> Single<Bool> in
@@ -90,6 +75,21 @@ private extension OSlideModesView {
                 self?.onNext()
             })
             .disposed(by: disposeBag)
+    }
+    
+    @objc
+    func selected(tapGesture: UITapGestureRecognizer) {
+        guard let cell = tapGesture.view as? OModeCell else {
+            return
+        }
+        
+        [
+            fullSupportCell,
+            withoutExplanationsCell,
+            examStyleCell
+        ].forEach { $0.isSelected = false }
+        
+        cell.isSelected = true
     }
 }
 
