@@ -22,7 +22,7 @@ final class OnboardingAnalytics {
             name = "Modes Screen"
         case .slide6:
             name = "Level Screen"
-        case .slide7:
+        case .time:
             name = "Test Time Screen"
         case .slide8:
             name = "Tests Number Screen"
