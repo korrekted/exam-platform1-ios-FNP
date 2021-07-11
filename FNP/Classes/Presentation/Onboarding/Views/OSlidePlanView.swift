@@ -8,13 +8,13 @@
 import UIKit
 import Lottie
 
-final class OSlide15View: OSlideView {
+final class OSlidePlanView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
     lazy var chartView = makeChartView()
-    lazy var cell1 = makeCell(title: "Onboarding.Slide15.Cell1", image: "Onboarding.Slide15.Cell1")
-    lazy var cell2 = makeCell(title: "Onboarding.Slide15.Cell2", image: "Onboarding.Slide15.Cell2")
-    lazy var cell3 = makeCell(title: "Onboarding.Slide15.Cell3", image: "Onboarding.Slide15.Cell3")
-    lazy var cell4 = makeCell(title: "Onboarding.Slide15.Cell4", image: "Onboarding.Slide15.Cell4")
+    lazy var cell1 = makeCell(title: "Onboarding.SlidePlan.Cell1", image: "Onboarding.SlidePlan.Cell1")
+    lazy var cell2 = makeCell(title: "Onboarding.SlidePlan.Cell2", image: "Onboarding.SlidePlan.Cell2")
+    lazy var cell3 = makeCell(title: "Onboarding.SlidePlan.Cell3", image: "Onboarding.SlidePlan.Cell3")
+    lazy var cell4 = makeCell(title: "Onboarding.SlidePlan.Cell4", image: "Onboarding.SlidePlan.Cell4")
     lazy var button = makeButton()
     
     override init(step: OnboardingView.Step) {
@@ -33,7 +33,7 @@ final class OSlide15View: OSlideView {
 }
 
 // MARK: Make constraints
-private extension OSlide15View {
+private extension OSlidePlanView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
@@ -82,17 +82,17 @@ private extension OSlide15View {
 }
 
 // MARK: Lazy initialization
-private extension OSlide15View {
+private extension OSlidePlanView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
-            .font(Fonts.SFProRounded.bold(size: 27.scale))
-            .lineHeight(32.scale)
+            .font(Fonts.SFProRounded.bold(size: 25.scale))
+            .lineHeight(29.scale)
             .textAlignment(.center)
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.Slide15.Title".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.SlidePlan.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
@@ -108,8 +108,8 @@ private extension OSlide15View {
         return view
     }
     
-    func makeCell(title: String, image: String) -> OSlide15Cell {
-        let view = OSlide15Cell()
+    func makeCell(title: String, image: String) -> OSlidePlanCell {
+        let view = OSlidePlanCell()
         view.label.text = title.localized
         view.imageView.image = UIImage(named: image)
         view.imageView.image = view.imageView.image?.withRenderingMode(.alwaysTemplate)
@@ -129,7 +129,7 @@ private extension OSlide15View {
         let view = UIButton()
         view.backgroundColor = Appearance.mainColor
         view.layer.cornerRadius = 30.scale
-        view.setAttributedTitle("Onboarding.Slide15.Button".localized.attributed(with: attrs), for: .normal)
+        view.setAttributedTitle("Onboarding.SlidePlan.Button".localized.attributed(with: attrs), for: .normal)
         view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

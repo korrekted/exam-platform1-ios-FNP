@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OSlide14View: OSlideView {
+final class OSlidePreloaderView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
     lazy var analyzeLabel = makeAnalyziLabel()
     lazy var progressView = makeProgressView()
@@ -32,7 +32,7 @@ final class OSlide14View: OSlideView {
 }
 
 // MARK: Private
-private extension OSlide14View {
+private extension OSlidePreloaderView {
     func calculatePercent() {
         let duration = Double(4.5)
         var seconds = Double(0)
@@ -47,9 +47,9 @@ private extension OSlide14View {
             self?.percentLabel.text = "\(percent) %"
             
             if percent <= 50 {
-                self?.analyzeLabel.text = "Onboarding.Slide14.Preloader1".localized
+                self?.analyzeLabel.text = "Onboarding.SlidePreloader.Preloader1".localized
             } else {
-                self?.analyzeLabel.text = "Onboarding.Slide14.Preloader2".localized
+                self?.analyzeLabel.text = "Onboarding.SlidePreloader.Preloader2".localized
             }
             
             if seconds >= duration {
@@ -70,7 +70,7 @@ private extension OSlide14View {
 }
 
 // MARK: Make constraints
-private extension OSlide14View {
+private extension OSlidePreloaderView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
@@ -100,17 +100,17 @@ private extension OSlide14View {
 }
 
 // MARK: Lazy initialization
-private extension OSlide14View {
+private extension OSlidePreloaderView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
-            .font(Fonts.SFProRounded.bold(size: 27.scale))
-            .lineHeight(32.scale)
+            .font(Fonts.SFProRounded.bold(size: 25.scale))
+            .lineHeight(29.scale)
             .textAlignment(.center)
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.Slide14.Title".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.SlidePreloader.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

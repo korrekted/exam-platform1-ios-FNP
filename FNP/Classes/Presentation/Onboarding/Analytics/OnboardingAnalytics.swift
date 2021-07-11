@@ -20,19 +20,17 @@ final class OnboardingAnalytics {
             name = "Goals Screen"
         case .modes:
             name = "Modes Screen"
-        case .slide6:
-            name = "Level Screen"
         case .time:
             name = "Test Time Screen"
         case .count:
             name = "Tests Number Screen"
         case .whenStudy:
             name = "When Study Screen"
-        case .slide9:
-            name = "Improve Screen"
-        case .slide14:
+        case .push:
+            name = "Push Screen"
+        case .preloader:
             name = "Plan Preparing Screen"
-        case .slide15:
+        case .plan:
             name = "Personal Plan Screen"
         }
         

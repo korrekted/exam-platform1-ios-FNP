@@ -38,12 +38,6 @@
 "Onboarding.Goals.Cell4" = "Resfresh the basics";
 "Onboarding.Goals.Cell5" = "Try something new";
 "Onboarding.WhenTaking.Title" = "WHEN ARE YOU TAKING THE EXAM?";
-"Onboarding.Slide6.Title" = "DESCRIBE YOUR CURRENT LEVEL:";
-"Onboarding.Slide6.Cell1" = "Novice";
-"Onboarding.Slide6.Cell2" = "Intermediate";
-"Onboarding.Slide6.Cell3" = "Advanced";
-"Onboarding.Slide6.Cell4" = "Fully competent";
-"Onboarding.Slide6.Cell5" = "Licensed specialist";
 "Onboarding.Time.Title" = "HOW MUCH TIME CAN\nYOU SPEND ON A TEST?";
 "Onboarding.Time.CasualTitle" = "Casual";
 "Onboarding.Time.CasualMin" = "5 min daily";
@@ -54,24 +48,15 @@
 "Onboarding.Time.IntenseTitle" = "Intense";
 "Onboarding.Time.IntenseMin" = "20 min daily";
 "Onboarding.SlideCount.Title" = "HOW MANY TESTS WOULD YOU WANT TO TAKE DAILY?";
-"Onboarding.Slide9.Title" = "WHERE DO YOU NEED TO IMPROVE THE MOST?";
-"Onboarding.Slide9.Tag1" = "Cognitive-\naffective\nbases";
-"Onboarding.Slide9.Tag2" = "Renal";
-"Onboarding.Slide9.Tag3" = "Respi-\nratory";
-"Onboarding.Slide9.Tag4" = "Integu-\nmentary";
-"Onboarding.Slide9.Tag5" = "Repro-\nductive";
-"Onboarding.Slide9.Tag6" = "Genitourinary\nand Renal";
-"Onboarding.Slide9.Tag7" = "Gastroin-\ntestinal";
-"Onboarding.Slide9.Tag8" = "Psychi-\natric";
-"Onboarding.Slide14.Title" = "PREPARING YOUR INDIVIDUAL STUDY PLAN";
-"Onboarding.Slide14.Preloader1" = "Analyzing your skill level...";
-"Onboarding.Slide14.Preloader2" = "Anazling your study preferences...";
-"Onboarding.Slide15.Title" = "YOUR PERSONAL 98% PASS RATE STUDY PLAN";
-"Onboarding.Slide15.Cell1" = "Over 500 tests";
-"Onboarding.Slide15.Cell2" = "10000+ individual questions";
-"Onboarding.Slide15.Cell3" = "Different courses";
-"Onboarding.Slide15.Cell4" = "reminders and notifications";
-"Onboarding.Slide15.Button" = "Let’s go!";
+"Onboarding.SlidePreloader.Title" = "PREPARING YOUR\nINDIVIDUAL STUDY PLAN";
+"Onboarding.SlidePreloader.Preloader1" = "Analyzing your skill level...";
+"Onboarding.SlidePreloader.Preloader2" = "Anazling your study preferences...";
+"Onboarding.SlidePlan.Title" = "YOUR PERSONAL 98% PASS\nRATE STUDY PLAN";
+"Onboarding.SlidePlan.Cell1" = "Over 500 tests";
+"Onboarding.SlidePlan.Cell2" = "10000+ individual questions";
+"Onboarding.SlidePlan.Cell3" = "Different courses";
+"Onboarding.SlidePlan.Cell4" = "reminders and notifications";
+"Onboarding.SlidePlan.Button" = "Let’s go!";
 "Onboarding.Welcome.Title1" = "PERSONAL STUDY PLAN";
 "Onboarding.Welcome.Subtitle1" = "The question bank is divided into sets according to your skills, requirements and settings";
 "Onboarding.Welcome.Title2" = "98% PASS RATE";
@@ -93,6 +78,9 @@
 "Onboarding.WhenStudy.Cell3" = "After work";
 "Onboarding.WhenStudy.Cell4" = "Before bedtime";
 "Onboarding.WhenStudy.Cell5" = "No particular preference";
+"Onboarding.Push.Title" = "STAY ON TRACK!";
+"Onboarding.Push.Subtitle" = "To help you to reach your goal we can useful reminders on a daily basis.";
+"Onboarding.Push.NotNow" = "Not now";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";

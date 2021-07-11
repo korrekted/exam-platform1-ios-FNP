@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OSlide15Cell: UIView {
+final class OSlidePlanCell: UIView {
     lazy var imageView = makeImageView()
     lazy var label = makeLabel()
     
@@ -24,14 +24,14 @@ final class OSlide15Cell: UIView {
 }
 
 // MARK: Private
-private extension OSlide15Cell {
+private extension OSlidePlanCell {
     func initialize() {
         backgroundColor = UIColor.clear
     }
 }
 
 // MARK: Make constraints
-private extension OSlide15Cell {
+private extension OSlidePlanCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 25.scale),
@@ -50,7 +50,7 @@ private extension OSlide15Cell {
 }
 
 // MARK: Lazy initialization
-private extension OSlide15Cell {
+private extension OSlidePlanCell {
     func makeImageView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
