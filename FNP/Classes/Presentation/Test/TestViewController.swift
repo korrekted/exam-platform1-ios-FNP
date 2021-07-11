@@ -46,7 +46,7 @@ final class TestViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        let currentButtonState = mainView.bottomButton.rx.tap
+        let currentButtonState = mainView.bottomView.bottomButton.rx.tap
             .withLatestFrom(viewModel.bottomViewState)
             .share()
         
@@ -108,14 +108,29 @@ final class TestViewController: UIViewController {
         
         let nextOffset = isHiddenNext
             .map { [weak mainView] isHidden -> CGFloat in
-                let bottomOffset = mainView.map { $0.bounds.height - $0.nextButton.frame.minY + 9.scale } ?? 0
-                return isHidden ? 0 : bottomOffset
+                let bottomOffset = mainView.map { $0.bounds.height - $0.nextButton.frame.minY + 9.scale } ?? 0.scale
+                return isHidden ? 0.scale : bottomOffset
             }
         
-        let bottomButtonOffset = viewModel.bottomViewState.map { $0 == .hidden ? 0 : 195.scale }
+        let bottomViewData = Driver
+            .combineLatest(
+                viewModel.question.map { $0.reference },
+                viewModel.bottomViewState
+            )
+            .startWith((nil, .hidden))
+        
+        
+        let bottomButtonOffset = bottomViewData
+            .map { BottomView.height(for: $0.1, reference: $0.0) }
+        
+        bottomViewData
+            .drive(Binder(mainView.bottomView) {
+                $0.setup(state: $1.1, reference: $1.0)
+            })
+            .disposed(by: disposeBag)
         
         Driver
-            .merge(nextOffset, bottomButtonOffset)
+            .combineLatest(nextOffset, bottomButtonOffset) { max($0, $1) }
             .distinctUntilChanged()
             .drive(Binder(mainView.tableView) {
                 $0.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: $1, right: 0)
@@ -129,12 +144,6 @@ final class TestViewController: UIViewController {
                 
                 base.didTapSubmit?(id)
                 base.logTapAnalytics(courseName: name, what: "finish test")
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.bottomViewState
-            .drive(Binder(mainView) {
-                $0.setupBottomButton(for: $1)
             })
             .disposed(by: disposeBag)
         
