@@ -75,9 +75,9 @@ extension QuestionTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: AnswersCell.self), for: indexPath) as! AnswersCell
             cell.configure(answers: answers, isMultiple: isMultiple, didTap: selectedIds)
             return cell
-        case let .explanation(explanation):
+        case let .explanation(explanation, html):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ExplanationCell.self), for: indexPath) as! ExplanationCell
-            cell.confugure(explanation: explanation)
+            cell.confugure(explanation: explanation, html: html)
             return cell
         case let .result(elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: AnswersCell.self), for: indexPath) as! AnswersCell

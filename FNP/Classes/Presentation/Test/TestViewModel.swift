@@ -259,7 +259,11 @@ private extension TestViewModel {
                 return .result(result)
             }
             
-            let explanation: [TestingCellType] = currentQuestion.explanation.map { [.explanation($0)] } ?? []
+            var explanation = [TestingCellType]()
+            if currentQuestion.explanation != nil || currentQuestion.explanationHtml != nil {
+                explanation.append(.explanation(currentQuestion.explanation ?? "",
+                                                html: currentQuestion.explanationHtml ?? ""))
+            }
             
             let newElement = QuestionElement(
                 id: currentElement.id,
