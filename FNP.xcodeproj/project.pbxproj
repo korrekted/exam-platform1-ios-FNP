@@ -232,6 +232,8 @@
 		966FE177269AD20C00B8FC20 /* OPushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE176269AD20C00B8FC20 /* OPushView.swift */; };
 		966FE179269AD51C00B8FC20 /* OSlideWidgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */; };
 		966FE17B269AE89D00B8FC20 /* OStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE17A269AE89D00B8FC20 /* OStepView.swift */; };
+		966FE17D269B566A00B8FC20 /* RestApiTransportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE17C269B566900B8FC20 /* RestApiTransportExtension.swift */; };
+		966FE17F269B59E500B8FC20 /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE17E269B59E500B8FC20 /* XOREncryption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -466,6 +468,8 @@
 		966FE176269AD20C00B8FC20 /* OPushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPushView.swift; sourceTree = "<group>"; };
 		966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideWidgetsView.swift; sourceTree = "<group>"; };
 		966FE17A269AE89D00B8FC20 /* OStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStepView.swift; sourceTree = "<group>"; };
+		966FE17C269B566900B8FC20 /* RestApiTransportExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiTransportExtension.swift; sourceTree = "<group>"; };
+		966FE17E269B59E500B8FC20 /* XOREncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOREncryption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,6 +568,7 @@
 				96155DC2268C97C600228151 /* UIDeviceExtension.swift */,
 				96155DC3268C97C600228151 /* UIEdgeInsets+Extension.swift */,
 				96155DC4268C97C600228151 /* StringExtension.swift */,
+				966FE17C269B566900B8FC20 /* RestApiTransportExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				96155DCA268C97C600228151 /* Fonts.swift */,
 				96155DCB268C97C600228151 /* Error */,
 				96155DCD268C97C600228151 /* Weak.swift */,
+				966FE17E269B59E500B8FC20 /* XOREncryption.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1613,6 +1619,7 @@
 				96155EE2268C97C700228151 /* AppDelegate.swift in Sources */,
 				966FE1612698EFFA00B8FC20 /* GetReferencesRequest.swift in Sources */,
 				96155F69268C97C700228151 /* CoursesViewController.swift in Sources */,
+				966FE17D269B566A00B8FC20 /* RestApiTransportExtension.swift in Sources */,
 				96155EEB268C97C700228151 /* GetMonetizationResponseMapper.swift in Sources */,
 				96155F01268C97C700228151 /* GetFailedSetRequest.swift in Sources */,
 				96155EEE268C97C700228151 /* ProductPrice.swift in Sources */,
@@ -1689,6 +1696,7 @@
 				96155F04268C97C700228151 /* SendAnswerRequest.swift in Sources */,
 				96155F3F268C97C700228151 /* AnswersCell.swift in Sources */,
 				966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */,
+				966FE17F269B59E500B8FC20 /* XOREncryption.swift in Sources */,
 				96155F73268C97C700228151 /* PassRateCell.swift in Sources */,
 				96155F21268C97C700228151 /* STCourseCell.swift in Sources */,
 				96155F57268C97C700228151 /* TestStatsViewController.swift in Sources */,
