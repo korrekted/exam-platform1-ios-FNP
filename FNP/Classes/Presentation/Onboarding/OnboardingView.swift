@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, references, whenTaking, goals, modes, time, count, whenStudy, push, preloader, plan
+        case welcome, references, whenTaking, goals, modes, time, count, whenStudy, push, widgets, preloader, plan
     }
     
     var didFinish: (() -> Void)?
@@ -34,6 +34,7 @@ final class OnboardingView: UIView {
             OSlideCountView(step: .count),
             OWhenStudyView(step: .whenStudy),
             OPushView(step: .push),
+            OSlideWidgetsView(step: .widgets),
             OSlidePreloaderView(step: .preloader),
             OSlidePlanView(step: .plan)
         ]

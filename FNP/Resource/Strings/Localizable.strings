@@ -81,6 +81,8 @@
 "Onboarding.Push.Title" = "STAY ON TRACK!";
 "Onboarding.Push.Subtitle" = "To help you to reach your goal we can useful reminders on a daily basis.";
 "Onboarding.Push.NotNow" = "Not now";
+"Onboarding.Widgets.Title" = "HANDY WIDGETS ON\nYOUR HOME SCREEN";
+"Onboarding.Widgets.Subtitle" = "Add widgets to your Home screen to track your pass rate and progress";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";

@@ -28,6 +28,8 @@ final class OnboardingAnalytics {
             name = "When Study Screen"
         case .push:
             name = "Push Screen"
+        case .widgets:
+            name = "Widgets Screen"
         case .preloader:
             name = "Plan Preparing Screen"
         case .plan:

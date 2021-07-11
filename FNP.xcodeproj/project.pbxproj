@@ -230,6 +230,7 @@
 		966FE172269A378E00B8FC20 /* OWhenStudyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE171269A378E00B8FC20 /* OWhenStudyCell.swift */; };
 		966FE174269AC8B800B8FC20 /* OSlideWhenStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */; };
 		966FE177269AD20C00B8FC20 /* OPushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE176269AD20C00B8FC20 /* OPushView.swift */; };
+		966FE179269AD51C00B8FC20 /* OSlideWidgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -462,6 +463,7 @@
 		966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideWhenStudyView.swift; sourceTree = "<group>"; };
 		966FE175269AD1E700B8FC20 /* FNP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FNP.entitlements; sourceTree = "<group>"; };
 		966FE176269AD20C00B8FC20 /* OPushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPushView.swift; sourceTree = "<group>"; };
+		966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideWidgetsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1286,6 +1288,7 @@
 				966FE16D26990F0900B8FC20 /* OSlideModesView.swift */,
 				966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */,
 				966FE176269AD20C00B8FC20 /* OPushView.swift */,
+				966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1638,6 +1641,7 @@
 				96155ED4268C97C700228151 /* ScreenSize.swift in Sources */,
 				96155F25268C97C700228151 /* SettingsViewController.swift in Sources */,
 				96155F16268C97C700228151 /* GetStatsRequest.swift in Sources */,
+				966FE179269AD51C00B8FC20 /* OSlideWidgetsView.swift in Sources */,
 				96155ED6268C97C700228151 /* SignError.swift in Sources */,
 				96155F22268C97C700228151 /* STUnlockCell.swift in Sources */,
 				96155F20268C97C700228151 /* STLinksCell.swift in Sources */,

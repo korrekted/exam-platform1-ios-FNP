@@ -112,7 +112,7 @@ private extension OPushView {
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 270.scale),
             imageView.widthAnchor.constraint(equalToConstant: 269.scale),
-            imageView.bottomAnchor.constraint(equalTo: allowButton.topAnchor, constant: ScreenSize.isIphoneXFamily ? -86.scale : -36.scale)
+            imageView.bottomAnchor.constraint(equalTo: allowButton.topAnchor, constant: ScreenSize.isIphoneXFamily ? -86.scale : -56.scale)
         ])
         
         NSLayoutConstraint.activate([
