@@ -60,6 +60,7 @@ private extension TestViewModel {
         
         let dataSource = Observable
             .combineLatest(questions, selectedAnswers)
+            .withLatestFrom(ProfileManagerCore().obtainTestMode()) { ($0.0, $0.1, $1) }
             .scan([], accumulator: questionAccumulator)
         
         return dataSource
@@ -193,9 +194,9 @@ private extension TestViewModel {
         case elements([QuestionElement])
     }
     
-    var questionAccumulator: ([QuestionElement], ([Question], AnswerElement?)) -> [QuestionElement] {
+    var questionAccumulator: ([QuestionElement], ([Question], AnswerElement?, TestMode?)) -> [QuestionElement] {
         return { [weak self] (old, args) -> [QuestionElement] in
-            let (questions, answers) = args
+            let (questions, answers, testMode) = args
             guard !old.isEmpty else {
                 return questions.enumerated().map { index, question in
                     let answers = question.answers.map { PossibleAnswerElement(id: $0.id,
@@ -221,7 +222,8 @@ private extension TestViewModel {
                         isMultiple: question.multiple,
                         index: index + 1,
                         isAnswered: question.isAnswered,
-                        questionsCount: questions.count
+                        questionsCount: questions.count,
+                        reference: question.reference
                     )
                 }
             }
@@ -229,6 +231,9 @@ private extension TestViewModel {
             guard let currentAnswers = answers, let currentQuestion = questions.first(where: { $0.id == currentAnswers.questionId }) else {
                 return old
             }
+            
+            
+            let currentMode = questions.count > 1 ? testMode : .fullComplect
             
             guard let index = old.firstIndex(where: { $0.id == currentAnswers.questionId }) else {
                 return old
@@ -238,9 +243,15 @@ private extension TestViewModel {
                 guard case .answers = value else { return value }
                 
                 let result = currentQuestion.answers.map { answer -> AnswerResultElement in
-                    let state: AnswerState = currentAnswers.answerIds.contains(answer.id)
-                        ? answer.isCorrect ? .correct : .error
-                        : answer.isCorrect ? currentQuestion.multiple ? .warning : .correct : .initial
+                    let state: AnswerState
+                    
+                    if currentMode == .onAnExam {
+                        state = .initial
+                    } else {
+                        state = currentAnswers.answerIds.contains(answer.id)
+                            ? answer.isCorrect ? .correct : .error
+                            : answer.isCorrect ? currentQuestion.multiple ? .warning : .correct : .initial
+                    }
                     
                     return AnswerResultElement(answer: answer.answer,
                                                answerHtml: answer.answerHtml,
@@ -260,7 +271,7 @@ private extension TestViewModel {
             }
             
             var explanation = [TestingCellType]()
-            if currentQuestion.explanation != nil || currentQuestion.explanationHtml != nil {
+            if (currentQuestion.explanation != nil || currentQuestion.explanationHtml != nil) && [.none, .fullComplect].contains(currentMode) {
                 explanation.append(.explanation(currentQuestion.explanation ?? "",
                                                 html: currentQuestion.explanationHtml ?? ""))
             }
@@ -271,7 +282,8 @@ private extension TestViewModel {
                 isMultiple: currentElement.isMultiple,
                 index: currentElement.index,
                 isAnswered: currentElement.isAnswered,
-                questionsCount: currentElement.questionsCount
+                questionsCount: currentElement.questionsCount,
+                reference: currentElement.reference
             )
             var result = old
             result[index] = newElement
