@@ -26,6 +26,8 @@ final class OnboardingAnalytics {
             name = "Test Time Screen"
         case .count:
             name = "Tests Number Screen"
+        case .whenStudy:
+            name = "When Study Screen"
         case .slide9:
             name = "Improve Screen"
         case .slide14:

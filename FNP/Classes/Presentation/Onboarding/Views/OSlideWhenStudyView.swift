@@ -1,33 +1,36 @@
 //
-//  OSlideModesView.swift
+//  OSlideWhenStudyView.swift
 //  FNP
 //
-//  Created by Andrey Chernyshev on 10.07.2021.
+//  Created by Andrey Chernyshev on 11.07.2021.
 //
 
 import UIKit
 import RxSwift
 import RxCocoa
 
-final class OSlideModesView: OSlideView {
+final class OWhenStudyView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
-    lazy var fullSupportCell = makeCell(image: "Onboarding.Modes.Cell1",
-                                        title: "Onboarding.Modes.Cell1.Title",
-                                        subtitle: "Onboarding.Modes.Cell1.Subtitle",
-                                        tag: 0)
-    lazy var withoutExplanationsCell = makeCell(image: "Onboarding.Modes.Cell2",
-                                                title: "Onboarding.Modes.Cell2.Title",
-                                                subtitle: "Onboarding.Modes.Cell2.Subtitle",
-                                                tag: 1)
-    lazy var examStyleCell = makeCell(image: "Onboarding.Modes.Cell3",
-                                      title: "Onboarding.Modes.Cell3.Title",
-                                      subtitle: "Onboarding.Modes.Cell3.Subtitle",
-                                      tag: 2)
+    lazy var cell1 = makeCell(title: "Onboarding.WhenStudy.Cell1",
+                              image: "Onboarding.WhenStudy.Cell1",
+                              tag: 0)
+    lazy var cell2 = makeCell(title: "Onboarding.WhenStudy.Cell2",
+                              image: "Onboarding.WhenStudy.Cell2",
+                              tag: 1)
+    lazy var cell3 = makeCell(title: "Onboarding.WhenStudy.Cell3",
+                              image: "Onboarding.WhenStudy.Cell3",
+                              tag: 2)
+    lazy var cell4 = makeCell(title: "Onboarding.WhenStudy.Cell4",
+                              image: "Onboarding.WhenStudy.Cell4",
+                              tag: 3)
+    lazy var cell5 = makeCell(title: "Onboarding.WhenStudy.Cell5",
+                              image: "Onboarding.WhenStudy.Cell5",
+                              tag: 4)
     lazy var button = makeButton()
     
-    private lazy var disposeBag = DisposeBag()
+    private lazy var manager = ProfileManagerCore()
     
-    private lazy var profileManager = ProfileManagerCore()
+    private lazy var disposeBag = DisposeBag()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -43,26 +46,22 @@ final class OSlideModesView: OSlideView {
 }
 
 // MARK: Private
-private extension OSlideModesView {
+private extension OWhenStudyView {
     func initialize() {
         button.rx.tap
             .flatMapLatest { [weak self] _ -> Single<Bool> in
                 guard let self = self else {
                     return .never()
                 }
-
-                guard let mode = [
-                    self.fullSupportCell,
-                    self.withoutExplanationsCell,
-                    self.examStyleCell
-                ]
-                .first(where: { $0.isSelected })?
-                .tag else {
-                    return .never()
-                }
                 
-                return self.profileManager
-                    .set(testMode: mode)
+                let selected = [
+                    self.cell1, self.cell2, self.cell3, self.cell4, self.cell5
+                ]
+                .filter { $0.isSelected }
+                .map { $0.tag }
+                
+                return self.manager
+                    .set(testWhen: selected)
                     .map { true }
                     .catchAndReturn(false)
             }
@@ -72,7 +71,7 @@ private extension OSlideModesView {
                     Toast.notify(with: "Onboarding.FailedToSave".localized, style: .danger)
                     return
                 }
-
+                
                 self?.onNext()
             })
             .disposed(by: disposeBag)
@@ -80,26 +79,18 @@ private extension OSlideModesView {
     
     @objc
     func selected(tapGesture: UITapGestureRecognizer) {
-        guard let cell = tapGesture.view as? OModeCell else {
+        guard let cell = tapGesture.view as? OWhenStudyCell else {
             return
         }
         
-        [
-            fullSupportCell,
-            withoutExplanationsCell,
-            examStyleCell
-        ].forEach { $0.isSelected = false }
-        
-        cell.isSelected = true
+        cell.isSelected = !cell.isSelected
         
         changeEnabled()
     }
     
     func changeEnabled() {
         let isEmpty = [
-            fullSupportCell,
-            withoutExplanationsCell,
-            examStyleCell
+            cell1, cell2, cell3, cell4, cell5
         ]
         .filter { $0.isSelected }
         .isEmpty
@@ -110,7 +101,7 @@ private extension OSlideModesView {
 }
 
 // MARK: Make constraints
-private extension OSlideModesView {
+private extension OWhenStudyView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
@@ -119,34 +110,46 @@ private extension OSlideModesView {
         ])
         
         NSLayoutConstraint.activate([
-            fullSupportCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            fullSupportCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            fullSupportCell.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 44.scale)
+            cell1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            cell1.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            cell1.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40.scale)
         ])
         
         NSLayoutConstraint.activate([
-            withoutExplanationsCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            withoutExplanationsCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            withoutExplanationsCell.topAnchor.constraint(equalTo: fullSupportCell.bottomAnchor, constant: 12.scale)
+            cell2.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            cell2.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            cell2.topAnchor.constraint(equalTo: cell1.bottomAnchor, constant: 15.scale)
         ])
         
         NSLayoutConstraint.activate([
-            examStyleCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            examStyleCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            examStyleCell.topAnchor.constraint(equalTo: withoutExplanationsCell.bottomAnchor, constant: 12.scale)
+            cell3.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            cell3.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            cell3.topAnchor.constraint(equalTo: cell2.bottomAnchor, constant: 15.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            cell4.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            cell4.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            cell4.topAnchor.constraint(equalTo: cell3.bottomAnchor, constant: 15.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            cell5.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            cell5.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            cell5.topAnchor.constraint(equalTo: cell4.bottomAnchor, constant: 15.scale)
         ])
         
         NSLayoutConstraint.activate([
             button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26.scale),
             button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26.scale),
             button.heightAnchor.constraint(equalToConstant: 60.scale),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -70.scale : -30.scale)
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -70.scale : -40.scale)
         ])
     }
 }
 
 // MARK: Lazy initialization
-private extension OSlideModesView {
+private extension OWhenStudyView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
@@ -156,26 +159,22 @@ private extension OSlideModesView {
         
         let view = UILabel()
         view.numberOfLines = 0
-        view.attributedText = "Onboarding.Modes.Title".localized.attributed(with: attrs)
+        view.attributedText = "Onboarding.WhenStudy.Title".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
     }
     
-    func makeCell(image: String,
-                  title: String,
-                  subtitle: String,
-                  tag: Int) -> OModeCell {
+    func makeCell(title: String, image: String, tag: Int) -> OWhenStudyCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selected(tapGesture:)))
         
-        let view = OModeCell()
+        let view = OWhenStudyCell()
         view.tag = tag
-        view.imageView.image = UIImage(named: image)
-        view.title = title.localized
-        view.subtitle = subtitle.localized
-        view.isSelected = false
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tapGesture)
+        view.isSelected = false
+        view.title = title.localized
+        view.imageView.image = UIImage(named: image)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

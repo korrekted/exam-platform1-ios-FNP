@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OSlide4Cell: PaddingLabel {
+final class OSlideGoalCell: PaddingLabel {
     var isSelected = false {
         didSet {
             update()
@@ -27,7 +27,7 @@ final class OSlide4Cell: PaddingLabel {
 }
 
 // MARK: Private
-private extension OSlide4Cell {
+private extension OSlideGoalCell {
     func initialize() {
         backgroundColor = UIColor.white
         

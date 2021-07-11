@@ -32,7 +32,7 @@ final class OSlideGoalsView: OSlideView {
 private extension OSlideGoalsView {
     @objc
     func selected(tapGesture: UITapGestureRecognizer) {
-        guard let cell = tapGesture.view as? OSlide4Cell else {
+        guard let cell = tapGesture.view as? OSlideGoalCell else {
             return
         }
         
@@ -116,10 +116,10 @@ private extension OSlideGoalsView {
         return view
     }
     
-    func makeCell(title: String, tag: Int) -> OSlide4Cell {
+    func makeCell(title: String, tag: Int) -> OSlideGoalCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selected(tapGesture:)))
         
-        let view = OSlide4Cell()
+        let view = OSlideGoalCell()
         view.tag = tag
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tapGesture)

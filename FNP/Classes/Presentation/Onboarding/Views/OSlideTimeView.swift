@@ -38,6 +38,7 @@ final class OSlideTimeView: OSlideView {
         
         makeConstraints()
         initialize()
+        changeEnabled()
     }
     
     required init?(coder: NSCoder) {
@@ -47,22 +48,6 @@ final class OSlideTimeView: OSlideView {
 
 // MARK: Private
 private extension OSlideTimeView {
-    @objc
-    func selected(tapGesture: UITapGestureRecognizer) {
-        guard let cell = tapGesture.view as? OTimeCell else {
-            return
-        }
-        
-        [
-            casualCell,
-            regularCell,
-            seriousCell,
-            intenseCell
-        ].forEach { $0.isSelected = false }
-        
-        cell.isSelected = true
-    }
-    
     func initialize() {
         button.rx.tap
             .flatMapLatest { [weak self] _ -> Single<Bool> in
@@ -99,6 +84,38 @@ private extension OSlideTimeView {
             })
             .disposed(by: disposeBag)
     }
+    
+    @objc
+    func selected(tapGesture: UITapGestureRecognizer) {
+        guard let cell = tapGesture.view as? OTimeCell else {
+            return
+        }
+        
+        [
+            casualCell,
+            regularCell,
+            seriousCell,
+            intenseCell
+        ].forEach { $0.isSelected = false }
+        
+        cell.isSelected = true
+        
+        changeEnabled()
+    }
+    
+    func changeEnabled() {
+        let isEmpty = [
+            casualCell,
+            regularCell,
+            seriousCell,
+            intenseCell
+        ]
+        .filter { $0.isSelected }
+        .isEmpty
+        
+        button.isEnabled = !isEmpty
+        button.alpha = isEmpty ? 0.4 : 1
+    }
 }
 
 // MARK: Make constraints
@@ -107,7 +124,7 @@ private extension OSlideTimeView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -17.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 134.scale : 50.scale)
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 117.scale : 53.scale)
         ])
         
         NSLayoutConstraint.activate([

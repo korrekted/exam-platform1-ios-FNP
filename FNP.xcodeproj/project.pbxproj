@@ -191,7 +191,7 @@
 		96155F7E268C97C700228151 /* OSlideCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB6268C97C600228151 /* OSlideCountView.swift */; };
 		96155F7F268C97C700228151 /* OProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB8268C97C700228151 /* OProgressView.swift */; };
 		96155F80268C97C700228151 /* OSlide15Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EB9268C97C700228151 /* OSlide15Cell.swift */; };
-		96155F82268C97C700228151 /* OSlide4Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBC268C97C700228151 /* OSlide4Cell.swift */; };
+		96155F82268C97C700228151 /* OSlideGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBC268C97C700228151 /* OSlideGoalCell.swift */; };
 		96155F83268C97C700228151 /* OSlide9TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBD268C97C700228151 /* OSlide9TagView.swift */; };
 		96155F84268C97C700228151 /* OSlide6Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBE268C97C700228151 /* OSlide6Cell.swift */; };
 		96155F85268C97C700228151 /* OSlide14View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EBF268C97C700228151 /* OSlide14View.swift */; };
@@ -231,6 +231,8 @@
 		966FE16C26990EB100B8FC20 /* OModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE16B26990EB100B8FC20 /* OModeCell.swift */; };
 		966FE16E26990F0900B8FC20 /* OSlideModesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE16D26990F0900B8FC20 /* OSlideModesView.swift */; };
 		966FE170269A2CAA00B8FC20 /* OTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE16F269A2CAA00B8FC20 /* OTimeCell.swift */; };
+		966FE172269A378E00B8FC20 /* OWhenStudyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE171269A378E00B8FC20 /* OWhenStudyCell.swift */; };
+		966FE174269AC8B800B8FC20 /* OSlideWhenStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -422,7 +424,7 @@
 		96155EB6268C97C600228151 /* OSlideCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideCountView.swift; sourceTree = "<group>"; };
 		96155EB8268C97C700228151 /* OProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OProgressView.swift; sourceTree = "<group>"; };
 		96155EB9268C97C700228151 /* OSlide15Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide15Cell.swift; sourceTree = "<group>"; };
-		96155EBC268C97C700228151 /* OSlide4Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide4Cell.swift; sourceTree = "<group>"; };
+		96155EBC268C97C700228151 /* OSlideGoalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideGoalCell.swift; sourceTree = "<group>"; };
 		96155EBD268C97C700228151 /* OSlide9TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide9TagView.swift; sourceTree = "<group>"; };
 		96155EBE268C97C700228151 /* OSlide6Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide6Cell.swift; sourceTree = "<group>"; };
 		96155EBF268C97C700228151 /* OSlide14View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlide14View.swift; sourceTree = "<group>"; };
@@ -463,6 +465,8 @@
 		966FE16B26990EB100B8FC20 /* OModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OModeCell.swift; sourceTree = "<group>"; };
 		966FE16D26990F0900B8FC20 /* OSlideModesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideModesView.swift; sourceTree = "<group>"; };
 		966FE16F269A2CAA00B8FC20 /* OTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTimeCell.swift; sourceTree = "<group>"; };
+		966FE171269A378E00B8FC20 /* OWhenStudyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWhenStudyCell.swift; sourceTree = "<group>"; };
+		966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideWhenStudyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1286,6 +1290,7 @@
 				966FE14A2698DC0900B8FC20 /* OSlideWelcomeView.swift */,
 				966FE1642698F6CF00B8FC20 /* OSlideReferencesView.swift */,
 				966FE16D26990F0900B8FC20 /* OSlideModesView.swift */,
+				966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1298,10 +1303,11 @@
 				96155EBA268C97C700228151 /* Source */,
 				96155EB8268C97C700228151 /* OProgressView.swift */,
 				96155EB9268C97C700228151 /* OSlide15Cell.swift */,
-				96155EBC268C97C700228151 /* OSlide4Cell.swift */,
+				96155EBC268C97C700228151 /* OSlideGoalCell.swift */,
 				96155EBD268C97C700228151 /* OSlide9TagView.swift */,
 				96155EBE268C97C700228151 /* OSlide6Cell.swift */,
 				966FE16B26990EB100B8FC20 /* OModeCell.swift */,
+				966FE171269A378E00B8FC20 /* OWhenStudyCell.swift */,
 				966FE16F269A2CAA00B8FC20 /* OTimeCell.swift */,
 			);
 			path = Atoms;
@@ -1669,6 +1675,7 @@
 				96155F1E268C97C700228151 /* RateUs.swift in Sources */,
 				96155F15268C97C700228151 /* GetStatsResponseMapper.swift in Sources */,
 				96155F17268C97C700228151 /* StatsManagerCore.swift in Sources */,
+				966FE174269AC8B800B8FC20 /* OSlideWhenStudyView.swift in Sources */,
 				96155ED2268C97C700228151 /* Scalable.swift in Sources */,
 				96155F36268C97C700228151 /* CourseView.swift in Sources */,
 				96155F5C268C97C700228151 /* TestStatsProgressElement.swift in Sources */,
@@ -1714,7 +1721,7 @@
 				96155F29268C97C700228151 /* StudyViewModel.swift in Sources */,
 				96155F5A268C97C700228151 /* TestStatsAnswerCell.swift in Sources */,
 				96155F24268C97C700228151 /* SettingsTableSection.swift in Sources */,
-				96155F82268C97C700228151 /* OSlide4Cell.swift in Sources */,
+				96155F82268C97C700228151 /* OSlideGoalCell.swift in Sources */,
 				96155F30268C97C700228151 /* SCBriefDayView.swift in Sources */,
 				96155F12268C97C700228151 /* Stats.swift in Sources */,
 				96155F75268C97C700228151 /* MainRateCell.swift in Sources */,
@@ -1750,6 +1757,7 @@
 				96155F44268C97C700228151 /* TestingCellType.swift in Sources */,
 				96155EF7268C97C700228151 /* GetTestStatsRequest.swift in Sources */,
 				96155F88268C97C700228151 /* OSlideView.swift in Sources */,
+				966FE172269A378E00B8FC20 /* OWhenStudyCell.swift in Sources */,
 				96155F59268C97C700228151 /* TestStatsProgressCell.swift in Sources */,
 				96155F7B268C97C700228151 /* MainStatsView.swift in Sources */,
 				96155ECB268C97C700228151 /* UIColorExtension.swift in Sources */,

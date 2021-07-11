@@ -87,6 +87,12 @@
 "Onboarding.Modes.Cell2.Subtitle" = "See the correct answer before\nmoving on to the next question";
 "Onboarding.Modes.Cell3.Title" = "Exam-style";
 "Onboarding.Modes.Cell3.Subtitle" = "See the results only after\nanswering all questions";
+"Onboarding.WhenStudy.Title" = "WHEN DO YOU WANT TO\nSTUDY?";
+"Onboarding.WhenStudy.Cell1" = "Early morning";
+"Onboarding.WhenStudy.Cell2" = "At noon";
+"Onboarding.WhenStudy.Cell3" = "After work";
+"Onboarding.WhenStudy.Cell4" = "Before bedtime";
+"Onboarding.WhenStudy.Cell5" = "No particular preference";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";
