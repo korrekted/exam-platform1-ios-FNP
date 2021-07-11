@@ -231,6 +231,7 @@
 		966FE174269AC8B800B8FC20 /* OSlideWhenStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */; };
 		966FE177269AD20C00B8FC20 /* OPushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE176269AD20C00B8FC20 /* OPushView.swift */; };
 		966FE179269AD51C00B8FC20 /* OSlideWidgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */; };
+		966FE17B269AE89D00B8FC20 /* OStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE17A269AE89D00B8FC20 /* OStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -464,6 +465,7 @@
 		966FE175269AD1E700B8FC20 /* FNP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FNP.entitlements; sourceTree = "<group>"; };
 		966FE176269AD20C00B8FC20 /* OPushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPushView.swift; sourceTree = "<group>"; };
 		966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideWidgetsView.swift; sourceTree = "<group>"; };
+		966FE17A269AE89D00B8FC20 /* OStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1305,6 +1307,7 @@
 				966FE16B26990EB100B8FC20 /* OModeCell.swift */,
 				966FE171269A378E00B8FC20 /* OWhenStudyCell.swift */,
 				966FE16F269A2CAA00B8FC20 /* OTimeCell.swift */,
+				966FE17A269AE89D00B8FC20 /* OStepView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -1719,6 +1722,7 @@
 				96155F82268C97C700228151 /* OSlideGoalCell.swift in Sources */,
 				96155F30268C97C700228151 /* SCBriefDayView.swift in Sources */,
 				96155F12268C97C700228151 /* Stats.swift in Sources */,
+				966FE17B269AE89D00B8FC20 /* OStepView.swift in Sources */,
 				96155F75268C97C700228151 /* MainRateCell.swift in Sources */,
 				96155EDD268C97C700228151 /* PaddingLabel.swift in Sources */,
 				96155F28268C97C700228151 /* SplashView.swift in Sources */,

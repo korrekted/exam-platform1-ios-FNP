@@ -18,10 +18,13 @@ final class OnboardingView: UIView {
     var step = Step.welcome {
         didSet {
             scroll()
+            headerUpdate()
         }
     }
     
     lazy var scrollView = makeScrollView()
+    lazy var progressView = makeProgressView()
+    lazy var previousButton = makePreviousButton()
     
     private lazy var contentViews: [OSlideView] = {
         [
@@ -45,11 +48,16 @@ final class OnboardingView: UIView {
         
         makeConstraints()
         initialize()
+        headerUpdate()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private lazy var progressCases: [Step] = [
+        .whenTaking, .goals, .modes, .time, .count, .whenStudy
+    ]
 }
 
 // MARK: OSlideViewDelegate
@@ -68,6 +76,19 @@ extension OnboardingView: OSlideViewDelegate {
         }
         
         self.step = nextStep
+    }
+}
+
+// MARK: Public
+extension OnboardingView {
+    func slideViewMoveToPrevious(from step: Step) {
+        let previousRawValue = step.rawValue - 1
+        
+        guard let previousStep = Step(rawValue: previousRawValue) else {
+            return
+        }
+        
+        self.step = previousStep
     }
 }
 
@@ -106,6 +127,22 @@ private extension OnboardingView {
         
         view.moveToThis()
     }
+    
+    func headerUpdate() {
+        switch step {
+        case .welcome, .references, .push, .widgets, .preloader, .plan:
+            previousButton.isHidden = true
+            progressView.isHidden = true
+        default:
+            previousButton.isHidden = false
+            progressView.isHidden = false
+        }
+        
+        guard let index = progressCases.firstIndex(of: step) else {
+            return
+        }
+        progressView.step = index + 1
+    }
 }
 
 // MARK: Make constraints
@@ -116,6 +153,20 @@ private extension OnboardingView {
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            previousButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 74.scale : 34.scale),
+            previousButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            previousButton.widthAnchor.constraint(equalToConstant: 6.scale),
+            previousButton.heightAnchor.constraint(equalToConstant: 13.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 37.scale),
+            progressView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            progressView.centerYAnchor.constraint(equalTo: previousButton.centerYAnchor),
+            progressView.heightAnchor.constraint(equalToConstant: 5.scale)
         ])
     }
 }
@@ -130,6 +181,27 @@ private extension OnboardingView {
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePreviousButton() -> TapAreaButton {
+        let view = TapAreaButton()
+        view.dx = -10.scale
+        view.dy = -10.scale
+        view.setImage(UIImage(named: "Onboarding.Previous"), for: .normal)
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeProgressView() -> OStepView {
+        let view = OStepView()
+        view.count = progressCases.count
+        view.step = 1
+        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

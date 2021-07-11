@@ -45,6 +45,8 @@ final class OnboardingViewController: UIViewController {
                 this.goToCourses()
             }
         }
+        
+        addPreviousAction()
     }
 }
 
@@ -59,9 +61,7 @@ extension OnboardingViewController {
 // MARK: API
 extension OnboardingViewController {
     static func wasViewed() -> Bool {
-        // TODO
-        false
-//        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
+        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
     }
 }
 
@@ -90,6 +90,18 @@ private extension OnboardingViewController {
         case .nextScreen:
             goToCourseOrCourses()
         }
+    }
+    
+    func addPreviousAction() {
+        mainView.previousButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
+                self.mainView.slideViewMoveToPrevious(from: self.mainView.step)
+            })
+            .disposed(by: disposeBag)
     }
     
     func goToCourseOrCourses() {
