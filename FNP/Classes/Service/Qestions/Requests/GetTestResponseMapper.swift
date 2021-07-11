@@ -54,6 +54,8 @@ private extension GetTestResponseMapper {
             }
             
             let explanation = restJSON["explanation"] as? String
+            let explanationHtml = restJSON["explanation_html"] as? String
+            
             let answers: [Answer] = Self.map(from: answersJSON)
             guard !answers.isEmpty else { return nil }
             
@@ -61,6 +63,8 @@ private extension GetTestResponseMapper {
             let video = (restJSON["video"] as? String)?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
             
             let questionHtml = restJSON["question_html"] as? String ?? ""
+            
+            let reference = restJSON["reference"] as? String
             
             return Question(
                 id: id,
@@ -71,7 +75,9 @@ private extension GetTestResponseMapper {
                 answers: answers,
                 multiple: multiple,
                 explanation: explanation,
-                isAnswered: isAnswered
+                explanationHtml: explanationHtml,
+                isAnswered: isAnswered,
+                reference: reference
             )
         }
     }
@@ -80,15 +86,21 @@ private extension GetTestResponseMapper {
         answers.compactMap { restJSON -> Answer? in
             guard
                 let id = restJSON["id"] as? Int,
-                let answer = restJSON["answer"] as? String,
                 let correct = restJSON["correct"] as? Bool
             else {
                 return nil
             }
             
+            let answer = restJSON["answer"] as? String
+            let answerHtml = restJSON["answer_html"] as? String
+            
             let image = (restJSON["image"] as? String)?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
             
-            return Answer(id: id, answer: answer, image: URL(string: image), isCorrect: correct)
+            return Answer(id: id,
+                          answer: answer,
+                          answerHtml: answerHtml,
+                          image: URL(string: image),
+                          isCorrect: correct)
         }
     }
 }

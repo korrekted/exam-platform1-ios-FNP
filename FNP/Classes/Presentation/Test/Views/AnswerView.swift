@@ -55,6 +55,19 @@ extension AnswerView {
         answerLabel.attributedText = answer.attributed(with: attrs)
     }
     
+    func setAnswer(answerHtml: String, image: URL?) {
+        answerLabel.attributedText = attributedString(for: answerHtml)
+        
+        if let imageUrl = image {
+            do {
+                try imageView.image = UIImage(data: Data(contentsOf: imageUrl))
+                needUpdateConstraints()
+            } catch {
+                
+            }
+        }
+    }
+    
     var didTap: Signal<Void> {
         tapGesture.rx.event
             .map { _ in () }
@@ -104,6 +117,22 @@ private extension AnswerView {
             iconView.tintColor = warningColor
             iconView.image = UIImage(named: "Question.Warning")
         }
+    }
+    
+    func attributedString(for htmlString: String) -> NSAttributedString? {
+        guard !htmlString.isEmpty else { return nil }
+        
+        let font = Fonts.SFProRounded.regular(size: 17.scale)
+        let htmlWithStyle = "<span style=\"font-family: \(font.fontName); font-style: regular; font-size: \(font.pointSize); line-height: 20px;\">\(htmlString)</span>"
+        let data = Data(htmlWithStyle.utf8)
+        
+        let attributedString = try? NSAttributedString(
+            data: data,
+            options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue],
+            documentAttributes: nil
+        )
+        
+        return attributedString
     }
 }
 
