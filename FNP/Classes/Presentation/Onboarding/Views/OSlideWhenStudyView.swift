@@ -106,7 +106,7 @@ private extension OWhenStudyView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 17.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -17.scale),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 117.scale : 53.scale)
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 117.scale : 70.scale)
         ])
         
         NSLayoutConstraint.activate([
