@@ -165,3 +165,15 @@
 "TestStats.Filter.Correct" = "Correct";
 "TestStats.Filter.All" = "All";
 "TestStats.QuestionsStats" = "%u correct\n%u incorrect";
+
+// MARK: Widgets
+"Widgets.TestsTaken" = "Tests taken";
+"Widgets.CorrectAnswers" = "Correct answers";
+"Widgets.QuestionsTaken" = "Questions taken";
+"Widgets.PassRate" = "Pass Rate";
+"Widgets.Small.Name" = "Pass Rate";
+"Widgets.Small.Description" = "See your latest pass rate improvements right in front of you";
+"Widgets.Medium.Name" = "Pass Rate and Stats";
+"Widgets.Medium.Description" = "Watch your pass rate progress and how many tests and questions you have taken";
+"Widgets.Large.Name" = "Full Stats";
+"Widgets.Large.Description" = "Watch your pass rate progress and how far are you from completing the question bank";

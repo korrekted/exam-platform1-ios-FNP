@@ -207,6 +207,7 @@
 		96155F9D268C97F700228151 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96155F9C268C97F700228151 /* Localizable.strings */; };
 		96155FA1268C995A00228151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96155FA0268C995A00228151 /* GoogleService-Info.plist */; };
 		96155FA3268C9A1B00228151 /* Onboarding.Chart.json in Resources */ = {isa = PBXBuildFile; fileRef = 96155FA2268C9A1B00228151 /* Onboarding.Chart.json */; };
+		96184D73269CE874004B362B /* LargeRateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D72269CE874004B362B /* LargeRateWidget.swift */; };
 		966FE1432698DB6C00B8FC20 /* WelcomeSlide1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */; };
 		966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */; };
 		966FE1472698DB9400B8FC20 /* WelcomeSlide3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */; };
@@ -239,18 +240,9 @@
 		966FE18D269C1F1C00B8FC20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966FE18C269C1F1C00B8FC20 /* Assets.xcassets */; };
 		966FE191269C1F1C00B8FC20 /* StatsWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 966FE184269C1F1800B8FC20 /* StatsWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		966FE1B6269C227400B8FC20 /* StatsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1B5269C227400B8FC20 /* StatsWidget.swift */; };
-		966FE1BD269C227900B8FC20 /* PassRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1B8269C227900B8FC20 /* PassRateView.swift */; };
-		966FE1BE269C227900B8FC20 /* SUICircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1B9269C227900B8FC20 /* SUICircleView.swift */; };
-		966FE1BF269C227900B8FC20 /* VerticalRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1BA269C227900B8FC20 /* VerticalRateView.swift */; };
-		966FE1C0269C227900B8FC20 /* HorizontalRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1BB269C227900B8FC20 /* HorizontalRateView.swift */; };
-		966FE1C1269C227900B8FC20 /* SUILineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1BC269C227900B8FC20 /* SUILineProgressView.swift */; };
 		966FE1CB269C227F00B8FC20 /* Starter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1C3269C227E00B8FC20 /* Starter.swift */; };
 		966FE1CC269C227F00B8FC20 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1C4269C227E00B8FC20 /* Provider.swift */; };
-		966FE1CD269C227F00B8FC20 /* TestTakenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1C6269C227E00B8FC20 /* TestTakenWidget.swift */; };
 		966FE1CE269C227F00B8FC20 /* MediumRateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1C7269C227E00B8FC20 /* MediumRateWidget.swift */; };
-		966FE1CF269C227F00B8FC20 /* CorrectAnswersWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1C8269C227E00B8FC20 /* CorrectAnswersWidget.swift */; };
-		966FE1D0269C227F00B8FC20 /* QuestionsTakenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1C9269C227E00B8FC20 /* QuestionsTakenWidget.swift */; };
-		966FE1D1269C227F00B8FC20 /* PassRateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1CA269C227E00B8FC20 /* PassRateWidget.swift */; };
 		966FE1D2269C22B000B8FC20 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155DC4268C97C600228151 /* StringExtension.swift */; };
 		966FE1D3269C22BA00B8FC20 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155DC7268C97C600228151 /* Scalable.swift */; };
 		966FE1D4269C22D000B8FC20 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155E21268C97C600228151 /* Stats.swift */; };
@@ -261,6 +253,12 @@
 		966FE21A269CC2DA00B8FC20 /* OSlideImproveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */; };
 		966FE21C269CCD0B00B8FC20 /* STModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE21B269CCD0B00B8FC20 /* STModeCell.swift */; };
 		966FE21E269CD1EF00B8FC20 /* SettingsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE21D269CD1EF00B8FC20 /* SettingsOpener.swift */; };
+		966FE225269CD3E500B8FC20 /* SUICircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE21F269CD3E500B8FC20 /* SUICircleView.swift */; };
+		966FE226269CD3E500B8FC20 /* SUILineProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE220269CD3E500B8FC20 /* SUILineProgressView.swift */; };
+		966FE228269CD3E500B8FC20 /* MediumVerticalRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE222269CD3E500B8FC20 /* MediumVerticalRateView.swift */; };
+		966FE229269CD3E500B8FC20 /* HorizontalRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE223269CD3E500B8FC20 /* HorizontalRateView.swift */; };
+		966FE22A269CD3E500B8FC20 /* PassRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE224269CD3E500B8FC20 /* PassRateView.swift */; };
+		966FE22C269CDD4300B8FC20 /* SmallRateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE22B269CDD4300B8FC20 /* SmallRateWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -493,6 +491,7 @@
 		96155F9C268C97F700228151 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		96155FA0268C995A00228151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96155FA2268C9A1B00228151 /* Onboarding.Chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Chart.json; sourceTree = "<group>"; };
+		96184D72269CE874004B362B /* LargeRateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRateWidget.swift; sourceTree = "<group>"; };
 		966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide1View.swift; sourceTree = "<group>"; };
 		966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide2View.swift; sourceTree = "<group>"; };
 		966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide3View.swift; sourceTree = "<group>"; };
@@ -527,24 +526,21 @@
 		966FE18C269C1F1C00B8FC20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		966FE18E269C1F1C00B8FC20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966FE1B5269C227400B8FC20 /* StatsWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsWidget.swift; sourceTree = "<group>"; };
-		966FE1B8269C227900B8FC20 /* PassRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassRateView.swift; sourceTree = "<group>"; };
-		966FE1B9269C227900B8FC20 /* SUICircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUICircleView.swift; sourceTree = "<group>"; };
-		966FE1BA269C227900B8FC20 /* VerticalRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalRateView.swift; sourceTree = "<group>"; };
-		966FE1BB269C227900B8FC20 /* HorizontalRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalRateView.swift; sourceTree = "<group>"; };
-		966FE1BC269C227900B8FC20 /* SUILineProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUILineProgressView.swift; sourceTree = "<group>"; };
 		966FE1C3269C227E00B8FC20 /* Starter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starter.swift; sourceTree = "<group>"; };
 		966FE1C4269C227E00B8FC20 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		966FE1C6269C227E00B8FC20 /* TestTakenWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTakenWidget.swift; sourceTree = "<group>"; };
 		966FE1C7269C227E00B8FC20 /* MediumRateWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumRateWidget.swift; sourceTree = "<group>"; };
-		966FE1C8269C227E00B8FC20 /* CorrectAnswersWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorrectAnswersWidget.swift; sourceTree = "<group>"; };
-		966FE1C9269C227E00B8FC20 /* QuestionsTakenWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTakenWidget.swift; sourceTree = "<group>"; };
-		966FE1CA269C227E00B8FC20 /* PassRateWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassRateWidget.swift; sourceTree = "<group>"; };
 		966FE1D6269C235800B8FC20 /* StatsShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsShareManager.swift; sourceTree = "<group>"; };
 		966FE1DA269C36E200B8FC20 /* StatsWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StatsWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		966FE217269CC28600B8FC20 /* OImproveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OImproveCell.swift; sourceTree = "<group>"; };
 		966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideImproveView.swift; sourceTree = "<group>"; };
 		966FE21B269CCD0B00B8FC20 /* STModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STModeCell.swift; sourceTree = "<group>"; };
 		966FE21D269CD1EF00B8FC20 /* SettingsOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOpener.swift; sourceTree = "<group>"; };
+		966FE21F269CD3E500B8FC20 /* SUICircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUICircleView.swift; sourceTree = "<group>"; };
+		966FE220269CD3E500B8FC20 /* SUILineProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUILineProgressView.swift; sourceTree = "<group>"; };
+		966FE222269CD3E500B8FC20 /* MediumVerticalRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumVerticalRateView.swift; sourceTree = "<group>"; };
+		966FE223269CD3E500B8FC20 /* HorizontalRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalRateView.swift; sourceTree = "<group>"; };
+		966FE224269CD3E500B8FC20 /* PassRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassRateView.swift; sourceTree = "<group>"; };
+		966FE22B269CDD4300B8FC20 /* SmallRateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRateWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1543,11 +1539,11 @@
 		966FE1B7269C227900B8FC20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				966FE1B8269C227900B8FC20 /* PassRateView.swift */,
-				966FE1B9269C227900B8FC20 /* SUICircleView.swift */,
-				966FE1BA269C227900B8FC20 /* VerticalRateView.swift */,
-				966FE1BB269C227900B8FC20 /* HorizontalRateView.swift */,
-				966FE1BC269C227900B8FC20 /* SUILineProgressView.swift */,
+				966FE223269CD3E500B8FC20 /* HorizontalRateView.swift */,
+				966FE222269CD3E500B8FC20 /* MediumVerticalRateView.swift */,
+				966FE224269CD3E500B8FC20 /* PassRateView.swift */,
+				966FE21F269CD3E500B8FC20 /* SUICircleView.swift */,
+				966FE220269CD3E500B8FC20 /* SUILineProgressView.swift */,
 			);
 			name = Views;
 			path = ../../CDL/StatsWidgets/Views;
@@ -1567,11 +1563,9 @@
 		966FE1C5269C227E00B8FC20 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				966FE1C6269C227E00B8FC20 /* TestTakenWidget.swift */,
 				966FE1C7269C227E00B8FC20 /* MediumRateWidget.swift */,
-				966FE1C8269C227E00B8FC20 /* CorrectAnswersWidget.swift */,
-				966FE1C9269C227E00B8FC20 /* QuestionsTakenWidget.swift */,
-				966FE1CA269C227E00B8FC20 /* PassRateWidget.swift */,
+				966FE22B269CDD4300B8FC20 /* SmallRateWidget.swift */,
+				96184D72269CE874004B362B /* LargeRateWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -2012,23 +2006,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				966FE1CF269C227F00B8FC20 /* CorrectAnswersWidget.swift in Sources */,
 				966FE1CE269C227F00B8FC20 /* MediumRateWidget.swift in Sources */,
-				966FE1CD269C227F00B8FC20 /* TestTakenWidget.swift in Sources */,
+				966FE226269CD3E500B8FC20 /* SUILineProgressView.swift in Sources */,
 				966FE1B6269C227400B8FC20 /* StatsWidget.swift in Sources */,
-				966FE1C0269C227900B8FC20 /* HorizontalRateView.swift in Sources */,
 				966FE1D8269C23B500B8FC20 /* StatsShareManager.swift in Sources */,
 				966FE1D4269C22D000B8FC20 /* Stats.swift in Sources */,
 				966FE1CB269C227F00B8FC20 /* Starter.swift in Sources */,
-				966FE1BD269C227900B8FC20 /* PassRateView.swift in Sources */,
+				966FE22C269CDD4300B8FC20 /* SmallRateWidget.swift in Sources */,
+				966FE228269CD3E500B8FC20 /* MediumVerticalRateView.swift in Sources */,
 				966FE1D3269C22BA00B8FC20 /* Scalable.swift in Sources */,
-				966FE1D1269C227F00B8FC20 /* PassRateWidget.swift in Sources */,
+				966FE22A269CD3E500B8FC20 /* PassRateView.swift in Sources */,
+				966FE225269CD3E500B8FC20 /* SUICircleView.swift in Sources */,
 				966FE1D2269C22B000B8FC20 /* StringExtension.swift in Sources */,
-				966FE1D0269C227F00B8FC20 /* QuestionsTakenWidget.swift in Sources */,
+				966FE229269CD3E500B8FC20 /* HorizontalRateView.swift in Sources */,
+				96184D73269CE874004B362B /* LargeRateWidget.swift in Sources */,
 				966FE1CC269C227F00B8FC20 /* Provider.swift in Sources */,
-				966FE1C1269C227900B8FC20 /* SUILineProgressView.swift in Sources */,
-				966FE1BF269C227900B8FC20 /* VerticalRateView.swift in Sources */,
-				966FE1BE269C227900B8FC20 /* SUICircleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,16 +12,9 @@ struct StatsContent: TimelineEntry {
     var date = Date()
     let passRate: CGFloat
     let testTaken: CGFloat
+    let testsTakenNum: Int
     let correctAnswers: CGFloat
+    let correctAnswersNum: Int
     let questionsTaken: CGFloat
-}
-
-// MARK: Make
-extension StatsContent {
-    static var placeholder: StatsContent {
-        StatsContent(passRate: 0,
-                     testTaken: 0,
-                     correctAnswers: 0,
-                     questionsTaken: 0)
-    }
+    let answeredQuestions: Int
 }
