@@ -121,6 +121,7 @@
 "Settings.ContactUs" = "Contact us";
 "Settings.TermsOfUse" = "Terms of use";
 "Settings.PrivacyPolicy" = "Privacy Policy";
+"Settings.ExamMode" = "Exam mode";
 
 // MARK: Stats
 "Stats.PassRate.Title" = " Current pass rate";

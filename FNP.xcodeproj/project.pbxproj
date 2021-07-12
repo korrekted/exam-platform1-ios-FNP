@@ -259,6 +259,8 @@
 		966FE1D9269C23E000B8FC20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96155F9C268C97F700228151 /* Localizable.strings */; };
 		966FE218269CC28600B8FC20 /* OImproveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE217269CC28600B8FC20 /* OImproveCell.swift */; };
 		966FE21A269CC2DA00B8FC20 /* OSlideImproveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */; };
+		966FE21C269CCD0B00B8FC20 /* STModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE21B269CCD0B00B8FC20 /* STModeCell.swift */; };
+		966FE21E269CD1EF00B8FC20 /* SettingsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE21D269CD1EF00B8FC20 /* SettingsOpener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -541,6 +543,8 @@
 		966FE1DA269C36E200B8FC20 /* StatsWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StatsWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		966FE217269CC28600B8FC20 /* OImproveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OImproveCell.swift; sourceTree = "<group>"; };
 		966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideImproveView.swift; sourceTree = "<group>"; };
+		966FE21B269CCD0B00B8FC20 /* STModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STModeCell.swift; sourceTree = "<group>"; };
+		966FE21D269CD1EF00B8FC20 /* SettingsOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOpener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1007,10 +1011,10 @@
 		96155E31268C97C600228151 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				96155E36268C97C600228151 /* Views */,
+				96155E34268C97C600228151 /* Utils */,
 				96155E32268C97C600228151 /* SettingsView.swift */,
 				96155E33268C97C600228151 /* SettingsViewModel.swift */,
-				96155E34268C97C600228151 /* Utils */,
-				96155E36268C97C600228151 /* Views */,
 				96155E3E268C97C600228151 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -1020,6 +1024,7 @@
 			isa = PBXGroup;
 			children = (
 				96155E35268C97C600228151 /* RateUs.swift */,
+				966FE21D269CD1EF00B8FC20 /* SettingsOpener.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1041,6 +1046,7 @@
 				96155E39268C97C600228151 /* STLinksCell.swift */,
 				96155E3A268C97C600228151 /* STCourseCell.swift */,
 				96155E3B268C97C600228151 /* STUnlockCell.swift */,
+				966FE21B269CCD0B00B8FC20 /* STModeCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1869,6 +1875,7 @@
 				96155EF1268C97C700228151 /* PaygateSpecialOffer.swift in Sources */,
 				96155EEF268C97C700228151 /* Paygate.swift in Sources */,
 				96155F45268C97C700228151 /* TestType.swift in Sources */,
+				966FE21E269CD1EF00B8FC20 /* SettingsOpener.swift in Sources */,
 				96155F04268C97C700228151 /* SendAnswerRequest.swift in Sources */,
 				96155F3F268C97C700228151 /* AnswersCell.swift in Sources */,
 				966FE218269CC28600B8FC20 /* OImproveCell.swift in Sources */,
@@ -1935,6 +1942,7 @@
 				96155EFE268C97C700228151 /* GetTestConfigResponseMapper.swift in Sources */,
 				96155ED0268C97C700228151 /* StringExtension.swift in Sources */,
 				966FE14B2698DC0900B8FC20 /* OSlideWelcomeView.swift in Sources */,
+				966FE21C269CCD0B00B8FC20 /* STModeCell.swift in Sources */,
 				96155F14268C97C700228151 /* GetBriefResponseMapper.swift in Sources */,
 				96155F6E268C97C700228151 /* StatsViewController.swift in Sources */,
 				96155F44268C97C700228151 /* TestingCellType.swift in Sources */,

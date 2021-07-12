@@ -46,7 +46,7 @@ final class OSlideModesView: OSlideView {
         
         SDKStorage.shared
             .amplitudeManager
-            .logEvent(name: "Exam Mode Tap", parameters: [:])
+            .logEvent(name: "Exam Mode Screen", parameters: [:])
     }
 }
 

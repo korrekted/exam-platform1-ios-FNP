@@ -11,6 +11,7 @@ import RxCocoa
 final class SettingsViewModel {
     private lazy var coursesManager = CoursesManagerCore()
     private lazy var sessionManager = SessionManagerCore()
+    private lazy var profileManager = ProfileManagerCore()
     
     lazy var sections = makeSections()
 }
@@ -20,19 +21,22 @@ private extension SettingsViewModel {
     func makeSections() -> Driver<[SettingsTableSection]> {
         let activeSubscription = self.activeSubscription()
         let course = self.course()
+        let mode = self.mode()
         
         return Driver
-            .combineLatest(activeSubscription, course) { activeSubscription, course -> [SettingsTableSection] in
+            .combineLatest(activeSubscription, course, mode) { activeSubscription, course, mode -> [SettingsTableSection] in
                 guard activeSubscription else {
                     return [
                         .unlockPremium,
                         .selectedCourse(course),
+                        .mode(mode),
                         .links
                     ]
                 }
                 
                 return [
                     .selectedCourse(course),
+                    .mode(mode),
                     .links
                 ]
             }
@@ -63,6 +67,13 @@ private extension SettingsViewModel {
     func course() -> Driver<Course> {
         coursesManager
             .rxGetSelectedCourse()
+            .compactMap { $0 }
+            .asDriver(onErrorDriveWith: .empty())
+    }
+    
+    func mode() -> Driver<TestMode> {
+        profileManager
+            .obtainTestMode()
             .compactMap { $0 }
             .asDriver(onErrorDriveWith: .empty())
     }
