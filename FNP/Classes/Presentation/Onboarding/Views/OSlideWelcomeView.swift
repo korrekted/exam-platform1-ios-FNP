@@ -53,6 +53,10 @@ private extension OSlideWelcomeView {
                                         height: UIScreen.main.bounds.height)
         
         indicatorView.index = 1
+        
+        SDKStorage.shared
+            .amplitudeManager
+            .logEvent(name: "Welcome Screen", parameters: ["number": 1])
     }
     
     @objc
@@ -63,6 +67,10 @@ private extension OSlideWelcomeView {
             onNext()
             return
         }
+        
+        SDKStorage.shared
+            .amplitudeManager
+            .logEvent(name: "Welcome Screen", parameters: ["number": indicatorView.index])
         
         scroll()
         updateButton()

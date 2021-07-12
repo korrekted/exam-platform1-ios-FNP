@@ -28,6 +28,10 @@ final class OSlidePreloaderView: OSlideView {
     override func moveToThis() {
         progressView.progressAnimation(duration: 4.5)
         calculatePercent()
+        
+        SDKStorage.shared
+            .amplitudeManager
+            .logEvent(name: "Plan Preparing Screen", parameters: [:])
     }
 }
 

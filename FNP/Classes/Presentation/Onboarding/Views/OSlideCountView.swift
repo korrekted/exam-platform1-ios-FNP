@@ -37,6 +37,14 @@ final class OSlideCountView: OSlideView {
         
         update(sender: slider)
     }
+    
+    override func moveToThis() {
+        super.moveToThis()
+        
+        SDKStorage.shared
+            .amplitudeManager
+            .logEvent(name: "Tests Number Screen", parameters: [:])
+    }
 }
 
 // MARK: Private

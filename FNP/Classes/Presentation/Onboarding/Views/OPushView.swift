@@ -39,6 +39,10 @@ final class OPushView: OSlideView {
         SDKStorage.shared
             .pushNotificationsManager
             .add(observer: self)
+        
+        SDKStorage.shared
+            .amplitudeManager
+            .logEvent(name: "Notifications Screen", parameters: [:])
     }
 }
 

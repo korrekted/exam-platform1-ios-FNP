@@ -40,6 +40,14 @@ final class OSlideModesView: OSlideView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func moveToThis() {
+        super.moveToThis()
+        
+        SDKStorage.shared
+            .amplitudeManager
+            .logEvent(name: "Exam Mode Tap", parameters: [:])
+    }
 }
 
 // MARK: Private
@@ -74,6 +82,39 @@ private extension OSlideModesView {
                 }
 
                 self?.onNext()
+            })
+            .disposed(by: disposeBag)
+        
+        button.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
+                let mode = [
+                    self.fullSupportCell,
+                    self.withoutExplanationsCell,
+                    self.examStyleCell
+                ]
+                .first(where: { $0.isSelected })?
+                .tag
+                
+                switch mode {
+                case 0:
+                    SDKStorage.shared
+                        .amplitudeManager
+                        .logEvent(name: "Exam Mode Tap", parameters: ["what": "full support"])
+                case 1:
+                    SDKStorage.shared
+                        .amplitudeManager
+                        .logEvent(name: "Exam Mode Tap", parameters: ["what": "without explanations"])
+                case 2:
+                    SDKStorage.shared
+                        .amplitudeManager
+                        .logEvent(name: "Exam Mode Tap", parameters: ["what": "exam style"])
+                default:
+                    break
+                }
             })
             .disposed(by: disposeBag)
     }

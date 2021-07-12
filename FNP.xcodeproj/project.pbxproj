@@ -200,7 +200,6 @@
 		96155F8A268C97C700228151 /* OSlideTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC4268C97C700228151 /* OSlideTimeView.swift */; };
 		96155F8D268C97C700228151 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC7268C97C700228151 /* OnboardingView.swift */; };
 		96155F8E268C97C700228151 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155EC8268C97C700228151 /* OnboardingViewModel.swift */; };
-		96155F8F268C97C700228151 /* OnboardingAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96155ECA268C97C700228151 /* OnboardingAnalytics.swift */; };
 		96155F96268C97EA00228151 /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96155F93268C97EA00228151 /* SF-Pro-Rounded-Semibold.otf */; };
 		96155F97268C97EA00228151 /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96155F94268C97EA00228151 /* SF-Pro-Rounded-Regular.otf */; };
 		96155F98268C97EA00228151 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96155F95268C97EA00228151 /* SF-Pro-Rounded-Bold.otf */; };
@@ -258,6 +257,8 @@
 		966FE1D7269C235800B8FC20 /* StatsShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1D6269C235800B8FC20 /* StatsShareManager.swift */; };
 		966FE1D8269C23B500B8FC20 /* StatsShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1D6269C235800B8FC20 /* StatsShareManager.swift */; };
 		966FE1D9269C23E000B8FC20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96155F9C268C97F700228151 /* Localizable.strings */; };
+		966FE218269CC28600B8FC20 /* OImproveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE217269CC28600B8FC20 /* OImproveCell.swift */; };
+		966FE21A269CC2DA00B8FC20 /* OSlideImproveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -482,7 +483,6 @@
 		96155EC4268C97C700228151 /* OSlideTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideTimeView.swift; sourceTree = "<group>"; };
 		96155EC7268C97C700228151 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		96155EC8268C97C700228151 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		96155ECA268C97C700228151 /* OnboardingAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingAnalytics.swift; sourceTree = "<group>"; };
 		96155F90268C97DF00228151 /* FNP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FNP-Bridging-Header.h"; sourceTree = "<group>"; };
 		96155F93268C97EA00228151 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
 		96155F94268C97EA00228151 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
@@ -539,6 +539,8 @@
 		966FE1CA269C227E00B8FC20 /* PassRateWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassRateWidget.swift; sourceTree = "<group>"; };
 		966FE1D6269C235800B8FC20 /* StatsShareManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsShareManager.swift; sourceTree = "<group>"; };
 		966FE1DA269C36E200B8FC20 /* StatsWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StatsWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		966FE217269CC28600B8FC20 /* OImproveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OImproveCell.swift; sourceTree = "<group>"; };
+		966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSlideImproveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1356,7 +1358,6 @@
 		96155EB2268C97C600228151 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				96155EC9268C97C700228151 /* Analytics */,
 				96155EB4268C97C600228151 /* Views */,
 				96155EB3268C97C600228151 /* OnboardingViewController.swift */,
 				96155EC7268C97C700228151 /* OnboardingView.swift */,
@@ -1382,6 +1383,7 @@
 				966FE173269AC8B800B8FC20 /* OSlideWhenStudyView.swift */,
 				966FE176269AD20C00B8FC20 /* OPushView.swift */,
 				966FE178269AD51C00B8FC20 /* OSlideWidgetsView.swift */,
+				966FE219269CC2DA00B8FC20 /* OSlideImproveView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1399,6 +1401,7 @@
 				966FE171269A378E00B8FC20 /* OWhenStudyCell.swift */,
 				966FE16F269A2CAA00B8FC20 /* OTimeCell.swift */,
 				966FE17A269AE89D00B8FC20 /* OStepView.swift */,
+				966FE217269CC28600B8FC20 /* OImproveCell.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -1409,14 +1412,6 @@
 				96155FA2268C9A1B00228151 /* Onboarding.Chart.json */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		96155EC9268C97C700228151 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				96155ECA268C97C700228151 /* OnboardingAnalytics.swift */,
-			);
-			path = Analytics;
 			sourceTree = "<group>";
 		};
 		96155F91268C97EA00228151 /* Fonts */ = {
@@ -1856,7 +1851,6 @@
 				96155F2B268C97C700228151 /* SCTitleCell.swift in Sources */,
 				96155F11268C97C700228151 /* Brief.swift in Sources */,
 				966FE1512698ED5100B8FC20 /* TestMode.swift in Sources */,
-				96155F8F268C97C700228151 /* OnboardingAnalytics.swift in Sources */,
 				96155F3D268C97C700228151 /* QuestionCell.swift in Sources */,
 				96155EDA268C97C700228151 /* NursingNavigationController.swift in Sources */,
 				96155F1E268C97C700228151 /* RateUs.swift in Sources */,
@@ -1877,6 +1871,7 @@
 				96155F45268C97C700228151 /* TestType.swift in Sources */,
 				96155F04268C97C700228151 /* SendAnswerRequest.swift in Sources */,
 				96155F3F268C97C700228151 /* AnswersCell.swift in Sources */,
+				966FE218269CC28600B8FC20 /* OImproveCell.swift in Sources */,
 				966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */,
 				966FE17F269B59E500B8FC20 /* XOREncryption.swift in Sources */,
 				96155F73268C97C700228151 /* PassRateCell.swift in Sources */,
@@ -1957,6 +1952,7 @@
 				96155F76268C97C700228151 /* StatsTableView.swift in Sources */,
 				96155ED3268C97C700228151 /* TextAttributes.swift in Sources */,
 				96155F5D268C97C700228151 /* TestStatsAnswer.swift in Sources */,
+				966FE21A269CC2DA00B8FC20 /* OSlideImproveView.swift in Sources */,
 				96155ECF268C97C700228151 /* UIEdgeInsets+Extension.swift in Sources */,
 				96155F74268C97C700228151 /* CourseProgressCell.swift in Sources */,
 				96155F7E268C97C700228151 /* OSlideCountView.swift in Sources */,

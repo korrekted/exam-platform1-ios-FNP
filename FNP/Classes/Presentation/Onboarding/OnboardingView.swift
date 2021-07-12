@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case welcome, references, whenTaking, goals, modes, time, count, whenStudy, push, widgets, preloader, plan
+        case welcome, references, whenTaking, goals, improve, modes, time, count, whenStudy, push, widgets, preloader, plan
     }
     
     var didFinish: (() -> Void)?
@@ -32,6 +32,7 @@ final class OnboardingView: UIView {
             OSlideReferencesView(step: .references),
             OSlideWhenTakingView(step: .whenTaking),
             OSlideGoalsView(step: .goals),
+            OSlideImproveView(step: .improve),
             OSlideModesView(step: .modes),
             OSlideTimeView(step: .time),
             OSlideCountView(step: .count),
@@ -56,15 +57,13 @@ final class OnboardingView: UIView {
     }
     
     private lazy var progressCases: [Step] = [
-        .whenTaking, .goals, .modes, .time, .count, .whenStudy
+        .whenTaking, .goals, .improve, .modes, .time, .count, .whenStudy
     ]
 }
 
 // MARK: OSlideViewDelegate
 extension OnboardingView: OSlideViewDelegate {
     func slideViewDidNext(from step: Step) {
-        OnboardingAnalytics().log(step: step)
-        
         didChangedSlide?(step)
         
         let nextRawValue = step.rawValue + 1
