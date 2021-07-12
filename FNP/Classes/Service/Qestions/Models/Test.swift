@@ -22,9 +22,9 @@ struct Question {
     let answers: [Answer]
     let multiple: Bool
     let explanation: String?
-    let explanationHtml: String? // TODO
+    let explanationHtml: String?
     let isAnswered: Bool
-    let reference: String? // TODO
+    let reference: String?
 }
 
 struct Answer {
