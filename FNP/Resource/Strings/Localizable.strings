@@ -85,13 +85,13 @@
 "Onboarding.Widgets.Subtitle" = "Add widgets to your Home screen to track your pass rate and progress";
 "Onboarding.Improve.Title" = "WHERE DO YOU NEED TO\nIMPROVE THE MOST?";
 "Onboarding.Improve.Cell1" = "Anatomy\n&\nPhysiology";
-"Onboarding.Improve.Cell2" = "Biology";
-"Onboarding.Improve.Cell3" = "Grammar";
-"Onboarding.Improve.Cell4" = "Chem-\nistry";
-"Onboarding.Improve.Cell5" = "Vocabulary";
-"Onboarding.Improve.Cell6" = "Mathematics";
-"Onboarding.Improve.Cell7" = "Reading\nComprehen-\nsion";
-"Onboarding.Improve.Cell8" = "Statistics";
+"Onboarding.Improve.Cell2" = "Change\nmanage-\nment";
+"Onboarding.Improve.Cell3" = "Sign &\nsymp-\ntoms";
+"Onboarding.Improve.Cell4" = "Ethical\nissues";
+"Onboarding.Improve.Cell5" = "Health\nhistory";
+"Onboarding.Improve.Cell6" = "Health\npromotion";
+"Onboarding.Improve.Cell7" = "Diagnostic\nand\ntherapeutic\ntests";
+"Onboarding.Improve.Cell8" = "Decision-\nmaking";
 
 // MARK: Courses
 "Courses.Title" = "Where would you\nwant to improve?";

@@ -84,7 +84,7 @@ private extension WelcomeSlide3View {
     func makeSubtitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor(integralRed: 75, green: 81, blue: 102))
-            .font(Fonts.SFProRounded.regular(size: 20.scale))
+            .font(Fonts.SFProRounded.semiBold(size: 20.scale))
             .lineHeight(28.scale)
             .textAlignment(.center)
         
