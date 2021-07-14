@@ -32,7 +32,6 @@ struct QuestionElement {
     let index: Int
     let isAnswered: Bool
     let questionsCount: Int
-    let reference: String?
 }
 
 struct AnswerElement {

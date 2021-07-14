@@ -210,6 +210,7 @@
 		96184D73269CE874004B362B /* LargeRateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D72269CE874004B362B /* LargeRateWidget.swift */; };
 		96184D76269EC64D004B362B /* ProfileMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D75269EC64D004B362B /* ProfileMediatorDelegate.swift */; };
 		96184D78269EC836004B362B /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D77269EC836004B362B /* ProfileMediator.swift */; };
+		96184D7A269F0FA6004B362B /* QuestionReferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D79269F0FA6004B362B /* QuestionReferenceCell.swift */; };
 		966FE1432698DB6C00B8FC20 /* WelcomeSlide1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */; };
 		966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */; };
 		966FE1472698DB9400B8FC20 /* WelcomeSlide3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */; };
@@ -496,6 +497,7 @@
 		96184D72269CE874004B362B /* LargeRateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRateWidget.swift; sourceTree = "<group>"; };
 		96184D75269EC64D004B362B /* ProfileMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediatorDelegate.swift; sourceTree = "<group>"; };
 		96184D77269EC836004B362B /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
+		96184D79269F0FA6004B362B /* QuestionReferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReferenceCell.swift; sourceTree = "<group>"; };
 		966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide1View.swift; sourceTree = "<group>"; };
 		966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide2View.swift; sourceTree = "<group>"; };
 		966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide3View.swift; sourceTree = "<group>"; };
@@ -1162,6 +1164,7 @@
 				96155E61268C97C600228151 /* QuestionCell.swift */,
 				96155E62268C97C600228151 /* ExplanationCell.swift */,
 				96155E63268C97C600228151 /* AnswersCell.swift */,
+				96184D79269F0FA6004B362B /* QuestionReferenceCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1977,6 +1980,7 @@
 				96155EE8268C97C700228151 /* PaygateManagerCore.swift in Sources */,
 				96155F37268C97C700228151 /* CourseViewCoordinator.swift in Sources */,
 				96155F3C268C97C700228151 /* QuestionCollectionCell.swift in Sources */,
+				96184D7A269F0FA6004B362B /* QuestionReferenceCell.swift in Sources */,
 				966FE16C26990EB100B8FC20 /* OModeCell.swift in Sources */,
 				96155F6C268C97C700228151 /* CoursesCollectionElement.swift in Sources */,
 				96155F56268C97C700228151 /* PaygateSpecialOfferView.swift in Sources */,

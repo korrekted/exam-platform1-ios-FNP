@@ -14,4 +14,5 @@ enum TestingCellType {
     case answers([PossibleAnswerElement])
     case result([AnswerResultElement])
     case explanation(String, html: String)
+    case reference(String)
 }

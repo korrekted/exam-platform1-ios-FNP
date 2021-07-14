@@ -83,6 +83,10 @@ extension QuestionTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: AnswersCell.self), for: indexPath) as! AnswersCell
             cell.configure(result: elements)
             return cell
+        case let .reference(reference):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: QuestionReferenceCell.self), for: indexPath) as! QuestionReferenceCell
+            cell.confugure(reference: reference)
+            return cell
         }
     }
 }
@@ -95,9 +99,10 @@ private extension QuestionTableView {
         register(AnswersCell.self, forCellReuseIdentifier: String(describing: AnswersCell.self))
         register(QuestionCell.self, forCellReuseIdentifier: String(describing: QuestionCell.self))
         register(ExplanationCell.self, forCellReuseIdentifier: String(describing: ExplanationCell.self))
+        register(QuestionReferenceCell.self, forCellReuseIdentifier: String(describing: QuestionReferenceCell.self))
+        
         separatorStyle = .none
         
         dataSource = self
     }
 }
-

@@ -216,14 +216,18 @@ private extension TestViewModel {
                         .answers(answers)
                     ].compactMap { $0 }
                     
+                    var referenceCellType = [TestingCellType]()
+                    if let reference = question.reference, !reference.isEmpty {
+                        referenceCellType.append(.reference(reference))
+                    }
+                    
                     return QuestionElement(
                         id: question.id,
-                        elements: elements,
+                        elements: elements + referenceCellType,
                         isMultiple: question.multiple,
                         index: index + 1,
                         isAnswered: question.isAnswered,
-                        questionsCount: questions.count,
-                        reference: question.reference
+                        questionsCount: questions.count
                     )
                 }
             }
@@ -232,14 +236,15 @@ private extension TestViewModel {
                 return old
             }
             
-            
             let currentMode = questions.count > 1 ? testMode : .fullComplect
             
             guard let index = old.firstIndex(where: { $0.id == currentAnswers.questionId }) else {
                 return old
             }
             let currentElement = old[index]
-            let newElements = currentElement.elements.map { value -> TestingCellType in
+            let newElements = currentElement.elements.compactMap { value -> TestingCellType? in
+                if case .reference = value { return nil }
+                
                 guard case .answers = value else { return value }
                 
                 let result = currentQuestion.answers.map { answer -> AnswerResultElement in
@@ -276,14 +281,18 @@ private extension TestViewModel {
                                                 html: currentQuestion.explanationHtml ?? ""))
             }
             
+            var referenceCellType = [TestingCellType]()
+            if let reference = currentQuestion.reference, !reference.isEmpty {
+                referenceCellType.append(.reference(reference))
+            }
+            
             let newElement = QuestionElement(
                 id: currentElement.id,
-                elements: newElements + explanation,
+                elements: newElements + explanation + referenceCellType,
                 isMultiple: currentElement.isMultiple,
                 index: currentElement.index,
                 isAnswered: currentElement.isAnswered,
-                questionsCount: currentElement.questionsCount,
-                reference: currentElement.reference
+                questionsCount: currentElement.questionsCount
             )
             var result = old
             result[index] = newElement
