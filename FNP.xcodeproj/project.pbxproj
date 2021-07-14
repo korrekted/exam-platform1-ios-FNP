@@ -208,6 +208,8 @@
 		96155FA1268C995A00228151 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96155FA0268C995A00228151 /* GoogleService-Info.plist */; };
 		96155FA3268C9A1B00228151 /* Onboarding.Chart.json in Resources */ = {isa = PBXBuildFile; fileRef = 96155FA2268C9A1B00228151 /* Onboarding.Chart.json */; };
 		96184D73269CE874004B362B /* LargeRateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D72269CE874004B362B /* LargeRateWidget.swift */; };
+		96184D76269EC64D004B362B /* ProfileMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D75269EC64D004B362B /* ProfileMediatorDelegate.swift */; };
+		96184D78269EC836004B362B /* ProfileMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96184D77269EC836004B362B /* ProfileMediator.swift */; };
 		966FE1432698DB6C00B8FC20 /* WelcomeSlide1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */; };
 		966FE1452698DB7F00B8FC20 /* WelcomeSlide2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */; };
 		966FE1472698DB9400B8FC20 /* WelcomeSlide3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */; };
@@ -492,6 +494,8 @@
 		96155FA0268C995A00228151 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96155FA2268C9A1B00228151 /* Onboarding.Chart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Chart.json; sourceTree = "<group>"; };
 		96184D72269CE874004B362B /* LargeRateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRateWidget.swift; sourceTree = "<group>"; };
+		96184D75269EC64D004B362B /* ProfileMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediatorDelegate.swift; sourceTree = "<group>"; };
+		96184D77269EC836004B362B /* ProfileMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMediator.swift; sourceTree = "<group>"; };
 		966FE1422698DB6C00B8FC20 /* WelcomeSlide1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide1View.swift; sourceTree = "<group>"; };
 		966FE1442698DB7F00B8FC20 /* WelcomeSlide2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide2View.swift; sourceTree = "<group>"; };
 		966FE1462698DB9400B8FC20 /* WelcomeSlide3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSlide3View.swift; sourceTree = "<group>"; };
@@ -1442,6 +1446,15 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		96184D74269EC63B004B362B /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				96184D75269EC64D004B362B /* ProfileMediatorDelegate.swift */,
+				96184D77269EC836004B362B /* ProfileMediator.swift */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
 		966FE1412698DB5E00B8FC20 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -1456,6 +1469,7 @@
 		966FE14C2698ECF600B8FC20 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				96184D74269EC63B004B362B /* Mediator */,
 				966FE14F2698ED0F00B8FC20 /* Request */,
 				966FE14E2698ED0200B8FC20 /* Manager */,
 				966FE14D2698ECFD00B8FC20 /* Models */,
@@ -1856,6 +1870,7 @@
 				96155F1E268C97C700228151 /* RateUs.swift in Sources */,
 				96155F15268C97C700228151 /* GetStatsResponseMapper.swift in Sources */,
 				96155F17268C97C700228151 /* StatsManagerCore.swift in Sources */,
+				96184D78269EC836004B362B /* ProfileMediator.swift in Sources */,
 				966FE174269AC8B800B8FC20 /* OSlideWhenStudyView.swift in Sources */,
 				96155ED2268C97C700228151 /* Scalable.swift in Sources */,
 				96155F36268C97C700228151 /* CourseView.swift in Sources */,
@@ -1993,6 +2008,7 @@
 				96155F85268C97C700228151 /* OSlidePreloaderView.swift in Sources */,
 				96155F7D268C97C700228151 /* OSlideWhenTakingView.swift in Sources */,
 				96155EF9268C97C700228151 /* TestStatsManagerCore.swift in Sources */,
+				96184D76269EC64D004B362B /* ProfileMediatorDelegate.swift in Sources */,
 				96155EFC268C97C700228151 /* Test.swift in Sources */,
 				96155EF5268C97C700228151 /* PaygateManager.swift in Sources */,
 				96155F46268C97C700228151 /* TestAnalytics.swift in Sources */,

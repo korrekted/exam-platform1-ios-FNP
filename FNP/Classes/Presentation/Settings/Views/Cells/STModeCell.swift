@@ -8,12 +8,14 @@
 import UIKit
 
 final class STModeCell: UITableViewCell {
-    var tapped: (() -> Void)?
+    var tapped: ((TestMode) -> Void)?
     
     lazy var container = makeContainer()
     lazy var titleLabel = makeTitleLabel()
     lazy var nameLabel = makeNameLabel()
     lazy var arrowIcon = makeArrowIcon()
+    
+    private var testMode: TestMode?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,6 +32,8 @@ final class STModeCell: UITableViewCell {
 // MARK: API
 extension STModeCell {
     func setup(mode: TestMode) {
+        self.testMode = mode
+        
         let attrs = TextAttributes()
             .textColor(UIColor(integralRed: 224, green: 117, blue: 140))
             .font(Fonts.SFProRounded.semiBold(size: 17.scale))
@@ -61,7 +65,11 @@ private extension STModeCell {
     
     @objc
     func didTap() {
-        tapped?()
+        guard let mode = testMode else {
+            return
+        }
+        
+        tapped?(mode)
     }
 }
 

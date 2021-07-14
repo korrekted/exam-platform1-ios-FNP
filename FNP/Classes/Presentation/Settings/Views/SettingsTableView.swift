@@ -10,7 +10,7 @@ import RxCocoa
 
 final class SettingsTableView: UITableView {
     enum Tapped {
-        case unlock, course, rateUs, contactUs, termsOfUse, privacyPoliicy, mode
+        case unlock, course, rateUs, contactUs, termsOfUse, privacyPoliicy, mode(TestMode)
     }
     
     lazy var tapped = PublishRelay<Tapped>()
@@ -71,8 +71,8 @@ extension SettingsTableView: UITableViewDataSource {
         case .mode(let mode):
             let cell = dequeueReusableCell(withIdentifier: String(describing: STModeCell.self), for: indexPath) as! STModeCell
             cell.setup(mode: mode)
-            cell.tapped = { [weak self] in
-                self?.tapped.accept(.mode)
+            cell.tapped = { [weak self] mode in
+                self?.tapped.accept(.mode(mode))
             }
             return cell
         }

@@ -50,6 +50,20 @@ final class OSlideModesView: OSlideView {
     }
 }
 
+// MARK: Public
+extension OSlideModesView {
+    func setup(mode: TestMode) {
+        switch mode {
+        case .fullComplect:
+            changeSelected(selectedCell: fullSupportCell)
+        case .noExplanations:
+            changeSelected(selectedCell: withoutExplanationsCell)
+        case .onAnExam:
+            changeSelected(selectedCell: examStyleCell)
+        }
+    }
+}
+
 // MARK: Private
 private extension OSlideModesView {
     func initialize() {
@@ -125,13 +139,17 @@ private extension OSlideModesView {
             return
         }
         
+        changeSelected(selectedCell: cell)
+    }
+    
+    func changeSelected(selectedCell: OModeCell) {
         [
             fullSupportCell,
             withoutExplanationsCell,
             examStyleCell
         ].forEach { $0.isSelected = false }
         
-        cell.isSelected = true
+        selectedCell.isSelected = true
         
         changeEnabled()
     }

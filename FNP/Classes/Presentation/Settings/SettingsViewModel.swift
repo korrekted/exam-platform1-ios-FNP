@@ -72,9 +72,18 @@ private extension SettingsViewModel {
     }
     
     func mode() -> Driver<TestMode> {
-        profileManager
+        let initial = profileManager
             .obtainTestMode()
             .compactMap { $0 }
             .asDriver(onErrorDriveWith: .empty())
+        
+        let updated = ProfileMediator.shared
+            .rxChangedTestMode
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver
+            .merge(
+                initial, updated
+            )
     }
 }

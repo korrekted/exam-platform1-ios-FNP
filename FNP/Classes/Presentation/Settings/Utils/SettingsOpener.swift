@@ -10,7 +10,7 @@ import RxSwift
 
 final class SettingsOpener {
     enum Screen {
-        case mode
+        case mode(TestMode)
     }
     
     private lazy var disposeBag = DisposeBag()
@@ -54,8 +54,11 @@ private extension SettingsOpener {
         let view: OSlideView
 
         switch screen {
-        case .mode:
-            view = OSlideModesView(step: .modes)
+        case .mode(let testMode):
+            let modeView = OSlideModesView(step: .modes)
+            modeView.setup(mode: testMode)
+            
+            view = modeView
         }
 
         view.frame = UIScreen.main.bounds

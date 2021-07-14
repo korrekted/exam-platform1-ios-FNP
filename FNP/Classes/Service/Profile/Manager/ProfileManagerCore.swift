@@ -36,7 +36,13 @@ extension ProfileManagerCore {
         return SDKStorage.shared
             .restApiTransport
             .callServerApi(requestBody: request)
-            .map { _ in Void() }
+            .flatMap { [weak self] _ -> Single<Void> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.notifyAboutChangedIfNotNil(testMode: testMode)
+            }
     }
 }
 
@@ -53,5 +59,18 @@ extension ProfileManagerCore {
             .restApiTransport
             .callServerApi(requestBody: request)
             .map(GetTestModeResponseMapper.map(from:))
+    }
+    
+    func notifyAboutChangedIfNotNil(testMode: Int?) -> Single<Void> {
+        guard
+            let testMode = testMode,
+            let mode = GetTestModeResponseMapper.map(testModeCode: testMode)
+        else {
+            return .deferred { .just(Void()) }
+        }
+        
+        ProfileMediator.shared.notifyAboutChanged(testMode: mode)
+        
+        return .deferred { .just(Void()) }
     }
 }

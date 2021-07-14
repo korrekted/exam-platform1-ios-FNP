@@ -86,8 +86,8 @@ private extension SettingsViewController {
             SDKStorage.shared
                 .amplitudeManager
                 .logEvent(name: "Settings Tap", parameters: ["what": "privacy policy"])
-        case .mode:
-            screenOpener.open(screen: .mode, from: self)
+        case .mode(let testMode):
+            screenOpener.open(screen: .mode(testMode), from: self)
         }
     }
     

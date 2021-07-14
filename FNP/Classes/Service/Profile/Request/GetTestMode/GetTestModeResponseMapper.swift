@@ -15,13 +15,17 @@ final class GetTestModeResponseMapper {
             return nil
         }
         
-        switch code {
+        return map(testModeCode: code)
+    }
+    
+    static func map(testModeCode: Int) -> TestMode? {
+        switch testModeCode {
         case 0:
             return .fullComplect
         case 1:
-            return .onAnExam
-        case 2:
             return .noExplanations
+        case 2:
+            return .onAnExam
         default:
             return nil
         }
