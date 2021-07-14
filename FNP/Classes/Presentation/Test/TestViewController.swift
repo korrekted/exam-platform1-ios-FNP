@@ -112,20 +112,15 @@ final class TestViewController: UIViewController {
                 return isHidden ? 0.scale : bottomOffset
             }
         
-        let bottomViewData = Driver
-            .combineLatest(
-                viewModel.question.map { $0.reference },
-                viewModel.bottomViewState
-            )
-            .startWith((nil, .hidden))
-        
+        let bottomViewData = viewModel.bottomViewState
+            .startWith(.hidden)
         
         let bottomButtonOffset = bottomViewData
-            .map { BottomView.height(for: $0.1, reference: $0.0) }
+            .map { BottomView.height(for: $0) }
         
         bottomViewData
             .drive(Binder(mainView.bottomView) {
-                $0.setup(state: $1.1, reference: $1.0)
+                $0.setup(state: $1)
             })
             .disposed(by: disposeBag)
         

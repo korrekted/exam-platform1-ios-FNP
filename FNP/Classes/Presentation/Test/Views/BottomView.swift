@@ -11,7 +11,6 @@ class BottomView: UIView {
     
     lazy var bottomButton = makeBottomButton()
     lazy var gradientView = makeGradientView()
-    lazy var referenceLabel = makeReferenceLabel()
     lazy var stackView = makeStackView()
     
     private let gradientLayer = CAGradientLayer()
@@ -35,7 +34,7 @@ class BottomView: UIView {
 
 // MARK: Public
 extension BottomView {
-    func setup(state: TestBottomButtonState, reference: String?) {
+    func setup(state: TestBottomButtonState) {
         switch state {
         case .confirm:
             bottomButton.setAttributedTitle("Question.Continue".localized.attributed(with: Self.buttonAttr), for: .normal)
@@ -48,13 +47,11 @@ extension BottomView {
         }
         
         bottomButton.isHidden = state == .hidden
-        referenceLabel.text = reference
-        referenceLabel.isHidden = reference == nil
         
     }
     
-    static func height(for state: TestBottomButtonState, reference: String?) -> CGFloat {
-        sizingView.setup(state: state, reference: reference)
+    static func height(for state: TestBottomButtonState) -> CGFloat {
+        sizingView.setup(state: state)
         
         let size = CGSize(width: UIScreen.main.bounds.width, height: UIView.layoutFittingCompressedSize.height)
         return sizingView.systemLayoutSizeFitting(size, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
@@ -67,9 +64,8 @@ private extension BottomView {
     
     func initialize() {
         backgroundColor = .clear
-        [gradientView, stackView, bottomButton, referenceLabel].forEach(addSubview)
+        [gradientView, stackView, bottomButton].forEach(addSubview)
         stackView.addArrangedSubview(bottomButton)
-        stackView.addArrangedSubview(referenceLabel)
     }
     
     static let buttonAttr = TextAttributes()
@@ -121,17 +117,6 @@ private extension BottomView {
         view.isUserInteractionEnabled = false
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }
-    
-    func makeReferenceLabel() -> UILabel {
-        let view = UILabel()
-        view.font = Fonts.SFProRounded.regular(size: 12.scale)
-        view.textColor = UIColor.black.withAlphaComponent(0.54)
-        view.textAlignment = .center
-        view.numberOfLines = 0
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
         return view
     }
     
