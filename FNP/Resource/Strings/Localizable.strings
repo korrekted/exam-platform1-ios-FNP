@@ -154,6 +154,7 @@
 "Question.Submit" = "Submit test";
 "Question.BackToStudying" = "Back to studying";
 "Question.QuestionProgress" = "Question %u/%u";
+"Question.NextQuestion" = "Next question";
 
 // MARK: Test Stats
 "TestStats.Title" = "";

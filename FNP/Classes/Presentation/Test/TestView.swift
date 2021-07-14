@@ -9,7 +9,6 @@ import UIKit
 final class TestView: UIView {
     lazy var progressView = makeProgressView()
     lazy var closeButton = makeCloseButton()
-    lazy var nextButton = makeNextButton()
     lazy var tableView = makeTableView()
     lazy var bottomView = makeBottomView()
     
@@ -60,13 +59,6 @@ private extension TestView {
             bottomView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        
-        NSLayoutConstraint.activate([
-            nextButton.heightAnchor.constraint(equalToConstant: 40.scale),
-            nextButton.widthAnchor.constraint(equalTo: nextButton.heightAnchor),
-            nextButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -16.scale),
-            nextButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -67.scale)
-        ])
     }
 }
 
@@ -97,19 +89,6 @@ private extension TestView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setImage(UIImage(named: "Question.Close"), for: .normal)
         view.tintColor = .black
-        addSubview(view)
-        return view
-    }
-    
-    func makeNextButton() -> UIButton {
-        let view = UIButton()
-        let color = UIColor(integralRed: 30, green: 39, blue: 85)
-        
-        view.setImage(UIImage(named: "Question.Next"), for: .normal)
-        view.tintColor = color
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 20.scale
-        view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
     }

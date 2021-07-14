@@ -67,7 +67,7 @@ final class TestViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        mainView.nextButton.rx.tap
+        mainView.bottomView.nextButton.rx.tap
             .withLatestFrom(courseName)
             .subscribe(onNext: { [weak self] name in
                 self?.viewModel.didTapNext.accept(Void())
@@ -99,24 +99,23 @@ final class TestViewController: UIViewController {
         let isHiddenNext = Driver
             .merge(
                 viewModel.isEndOfTest,
-                mainView.nextButton.rx.tap.asDriver().map { _ in true }
+                mainView.bottomView.nextButton.rx.tap.asDriver().map { _ in true }
             )
         
         isHiddenNext
-            .drive(mainView.nextButton.rx.isHidden)
+            .drive(mainView.bottomView.nextButton.rx.isHidden)
             .disposed(by: disposeBag)
         
         let nextOffset = isHiddenNext
-            .map { [weak mainView] isHidden -> CGFloat in
-                let bottomOffset = mainView.map { $0.bounds.height - $0.nextButton.frame.minY + 9.scale } ?? 0.scale
-                return isHidden ? 0.scale : bottomOffset
+            .map { isHidden -> CGFloat in
+                return isHidden ? 90.scale : 140.scale
             }
         
         let bottomViewData = viewModel.bottomViewState
             .startWith(.hidden)
         
         let bottomButtonOffset = bottomViewData
-            .map { BottomView.height(for: $0) }
+            .map { $0 == .hidden ? 90 : 140.scale }
         
         bottomViewData
             .drive(Binder(mainView.bottomView) {

@@ -8,17 +8,17 @@
 import UIKit
 
 class BottomView: UIView {
-    
     lazy var bottomButton = makeBottomButton()
+    lazy var nextButton = makeNextButton()
     lazy var gradientView = makeGradientView()
-    lazy var stackView = makeStackView()
     
     private let gradientLayer = CAGradientLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
+        
         makeConstraints()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -47,25 +47,13 @@ extension BottomView {
         }
         
         bottomButton.isHidden = state == .hidden
-        
-    }
-    
-    static func height(for state: TestBottomButtonState) -> CGFloat {
-        sizingView.setup(state: state)
-        
-        let size = CGSize(width: UIScreen.main.bounds.width, height: UIView.layoutFittingCompressedSize.height)
-        return sizingView.systemLayoutSizeFitting(size, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
     }
 }
 
 // MARK: Private
 private extension BottomView {
-    static let sizingView = BottomView()
-    
     func initialize() {
         backgroundColor = .clear
-        [gradientView, stackView, bottomButton].forEach(addSubview)
-        stackView.addArrangedSubview(bottomButton)
     }
     
     static let buttonAttr = TextAttributes()
@@ -86,10 +74,18 @@ private extension BottomView {
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: gradientView.topAnchor, constant: 71.scale),
-            stackView.leadingAnchor.constraint(equalTo: gradientView.leadingAnchor, constant: 26.scale),
-            stackView.trailingAnchor.constraint(equalTo: gradientView.trailingAnchor, constant: -26.scale),
-            stackView.bottomAnchor.constraint(equalTo: gradientView.bottomAnchor, constant: -36.scale)
+            bottomButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 71.scale : 30.scale),
+            bottomButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 26.scale),
+            bottomButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -26.scale),
+            bottomButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -36.scale),
+            bottomButton.heightAnchor.constraint(equalToConstant: 60.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            nextButton.leadingAnchor.constraint(equalTo: bottomButton.leadingAnchor),
+            nextButton.trailingAnchor.constraint(equalTo: bottomButton.trailingAnchor),
+            nextButton.topAnchor.constraint(equalTo: bottomButton.topAnchor),
+            nextButton.bottomAnchor.constraint(equalTo: bottomButton.bottomAnchor)
         ])
     }
 }
@@ -98,10 +94,20 @@ private extension BottomView {
 private extension BottomView {
     func makeBottomButton() -> UIButton {
         let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 30.scale
         view.backgroundColor = Appearance.mainColor
-        view.heightAnchor.constraint(equalToConstant: 60.scale).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeNextButton() -> UIButton {
+        let view = UIButton()
+        view.setAttributedTitle("Question.NextQuestion".localized.attributed(with: Self.buttonAttr), for: .normal)
+        view.layer.cornerRadius = 30.scale
+        view.backgroundColor = Appearance.mainColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
         return view
     }
     
@@ -117,14 +123,7 @@ private extension BottomView {
         view.isUserInteractionEnabled = false
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }
-    
-    func makeStackView() -> UIStackView {
-        let view = UIStackView()
-        view.axis = .vertical
-        view.spacing = 20.scale
-        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
         return view
     }
 }

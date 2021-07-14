@@ -27,7 +27,7 @@ extension QuestionReferenceCell {
     func confugure(reference: String) {
         let attrs = TextAttributes()
             .font(Fonts.SFProRounded.regular(size: 12.scale))
-            .textColor(.black)
+            .textColor(UIColor.black.withAlphaComponent(0.54))
             .lineHeight(14.scale)
             .textAlignment(.center)
         
