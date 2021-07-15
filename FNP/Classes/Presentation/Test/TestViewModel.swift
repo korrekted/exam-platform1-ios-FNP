@@ -23,11 +23,13 @@ final class TestViewModel {
     lazy var isEndOfTest = endOfTest()
     lazy var userTestId = makeUserTestId()
     lazy var bottomViewState = makeBottomState()
+    lazy var testMode = makeTestMode()
     lazy var errorMessage = makeErrorMessage()
     lazy var needPayment = makeNeedPayment()
     
     private lazy var questionManager = QuestionManagerCore()
     private lazy var courseManager = CoursesManagerCore()
+    private lazy var profileManager = ProfileManagerCore()
     
     private lazy var testElement = loadTest().share(replay: 1, scope: .forever)
     private lazy var selectedAnswers = makeSelectedAnswers().share(replay: 1, scope: .forever)
@@ -60,7 +62,7 @@ private extension TestViewModel {
         
         let dataSource = Observable
             .combineLatest(questions, selectedAnswers)
-            .withLatestFrom(ProfileManagerCore().obtainTestMode()) { ($0.0, $0.1, $1) }
+            .withLatestFrom(testMode) { ($0.0, $0.1, $1) }
             .scan([], accumulator: questionAccumulator)
         
         return dataSource
@@ -183,6 +185,12 @@ private extension TestViewModel {
             }
             .startWith(.hidden)
             .distinctUntilChanged()
+    }
+    
+    func makeTestMode() -> Driver<TestMode?> {
+        profileManager
+            .obtainTestMode()
+            .asDriver(onErrorJustReturn: nil)
     }
 }
 

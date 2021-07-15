@@ -96,17 +96,29 @@ final class TestViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        let testMode = viewModel.testMode
+            .startWith(nil)
+        
         let isHiddenNext = Driver
             .merge(
-                viewModel.isEndOfTest,
-                mainView.bottomView.nextButton.rx.tap.asDriver().map { _ in true }
+                viewModel.isEndOfTest.withLatestFrom(testMode) { ($0, $1) },
+                mainView.bottomView.nextButton.rx.tap.asDriver().map { _ in (true, nil) }
             )
         
         isHiddenNext
-            .drive(mainView.bottomView.nextButton.rx.isHidden)
+            .drive(onNext: { [weak self] stub in
+                let (isHidden, testMode) = stub
+                
+                if testMode == .onAnExam {
+                    self?.viewModel.didTapNext.accept(Void())
+                } else {
+                    self?.mainView.bottomView.nextButton.isHidden = isHidden
+                }
+            })
             .disposed(by: disposeBag)
         
         let nextOffset = isHiddenNext
+            .map { $0.0 }
             .map { isHidden -> CGFloat in
                 return isHidden ? 90.scale : 140.scale
             }
