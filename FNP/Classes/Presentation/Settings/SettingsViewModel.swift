@@ -22,23 +22,28 @@ private extension SettingsViewModel {
         let activeSubscription = self.activeSubscription()
         let course = self.course()
         let mode = self.mode()
+        let references = self.makeReferencesSection()
         
         return Driver
-            .combineLatest(activeSubscription, course, mode) { activeSubscription, course, mode -> [SettingsTableSection] in
-                guard activeSubscription else {
-                    return [
-                        .unlockPremium,
-                        .selectedCourse(course),
-                        .mode(mode),
-                        .links
-                    ]
+            .combineLatest(activeSubscription, course, mode, references) { activeSubscription, course, mode, references -> [SettingsTableSection] in
+                var sections = [SettingsTableSection]()
+                
+                if !activeSubscription {
+                    sections.append(.unlockPremium)
                 }
                 
-                return [
+                sections.append(contentsOf: [
                     .selectedCourse(course),
-                    .mode(mode),
-                    .links
-                ]
+                    .mode(mode)
+                ])
+                
+                if let ref = references {
+                    sections.append(ref)
+                }
+                
+                sections.append(.links)
+                
+                return sections
             }
     }
     
@@ -85,5 +90,14 @@ private extension SettingsViewModel {
             .merge(
                 initial, updated
             )
+    }
+    
+    func makeReferencesSection() -> Driver<SettingsTableSection?> {
+        coursesManager
+            .retrieveReferences(forceUpdate: false)
+            .map { references -> SettingsTableSection? in
+                references.isEmpty ? nil : .references
+            }
+            .asDriver(onErrorJustReturn: nil)
     }
 }

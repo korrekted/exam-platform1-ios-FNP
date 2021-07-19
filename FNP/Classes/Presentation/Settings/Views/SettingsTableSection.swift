@@ -10,4 +10,5 @@ enum SettingsTableSection {
     case selectedCourse(Course)
     case links
     case mode(TestMode)
+    case references
 }

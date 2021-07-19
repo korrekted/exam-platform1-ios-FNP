@@ -122,6 +122,7 @@
 "Settings.TermsOfUse" = "Terms of use";
 "Settings.PrivacyPolicy" = "Privacy Policy";
 "Settings.ExamMode" = "Exam mode";
+"Settings.References" = "References";
 
 // MARK: Stats
 "Stats.PassRate.Title" = " Current pass rate";

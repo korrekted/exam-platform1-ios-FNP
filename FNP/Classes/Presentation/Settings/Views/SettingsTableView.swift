@@ -10,7 +10,7 @@ import RxCocoa
 
 final class SettingsTableView: UITableView {
     enum Tapped {
-        case unlock, course, rateUs, contactUs, termsOfUse, privacyPoliicy, mode(TestMode)
+        case unlock, course, rateUs, contactUs, termsOfUse, privacyPoliicy, mode(TestMode), references
     }
     
     lazy var tapped = PublishRelay<Tapped>()
@@ -75,6 +75,12 @@ extension SettingsTableView: UITableViewDataSource {
                 self?.tapped.accept(.mode(mode))
             }
             return cell
+        case .references:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: STReferencesCell.self), for: indexPath) as! STReferencesCell
+            cell.tapped = { [weak self] in
+                self?.tapped.accept(.references)
+            }
+            return cell
         }
     }
 }
@@ -101,6 +107,8 @@ extension SettingsTableView: UITableViewDelegate {
             return 200.scale
         case .mode:
             return 51.scale
+        case .references:
+            return 51.scale
         }
     }
 }
@@ -112,6 +120,7 @@ private extension SettingsTableView {
         register(STCourseCell.self, forCellReuseIdentifier: String(describing: STCourseCell.self))
         register(STLinksCell.self, forCellReuseIdentifier: String(describing: STLinksCell.self))
         register(STModeCell.self, forCellReuseIdentifier: String(describing: STModeCell.self))
+        register(STReferencesCell.self, forCellReuseIdentifier: String(describing: STReferencesCell.self))
         
         dataSource = self
         delegate = self

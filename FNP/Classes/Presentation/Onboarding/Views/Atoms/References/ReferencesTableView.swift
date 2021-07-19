@@ -58,6 +58,17 @@ extension ReferencesTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         16.scale
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard
+            let url = URL(string: references[indexPath.section].link ?? ""),
+            UIApplication.shared.canOpenURL(url)
+        else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:])
+    }
 }
 
 // MARK: Private

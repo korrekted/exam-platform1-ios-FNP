@@ -24,7 +24,8 @@ final class GetReferencesResponseMapper {
             }
             
             return Reference(title: title,
-                             details: details)
+                             details: details,
+                             link: json["link"] as? String)
         }
     }
 }

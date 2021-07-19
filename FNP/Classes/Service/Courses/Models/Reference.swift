@@ -8,6 +8,7 @@
 struct Reference {
     let title: String
     let details: String
+    let link: String?
 }
 
 // MARK: Codable
