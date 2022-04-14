@@ -26,23 +26,26 @@ final class OnboardingView: UIView {
     lazy var progressView = makeProgressView()
     lazy var previousButton = makePreviousButton()
     
+    lazy var planView = OSlidePlanView(step: .plan, scope: scope)
     private lazy var contentViews: [OSlideView] = {
         [
-            OSlideWelcomeView(step: .welcome),
-            OSlideReferencesView(step: .references),
-            OSlideWhenTakingView(step: .whenTaking),
-            OSlideGoalsView(step: .goals),
-            OSlideImproveView(step: .improve),
-            OSlideModesView(step: .modes),
-            OSlideTimeView(step: .time),
-            OSlideCountView(step: .count),
-            OWhenStudyView(step: .whenStudy),
-            OPushView(step: .push),
-            OSlideWidgetsView(step: .widgets),
-            OSlidePreloaderView(step: .preloader),
-            OSlidePlanView(step: .plan)
+            OSlideWelcomeView(step: .welcome, scope: scope),
+            OSlideReferencesView(step: .references, scope: scope),
+            OSlideWhenTakingView(step: .whenTaking, scope: scope),
+            OSlideGoalsView(step: .goals, scope: scope),
+            OSlideImproveView(step: .improve, scope: scope),
+            OSlideModesView(step: .modes, scope: scope),
+            OSlideTimeView(step: .time, scope: scope),
+            OSlideCountView(step: .count, scope: scope),
+            OWhenStudyView(step: .whenStudy, scope: scope),
+            OPushView(step: .push, scope: scope),
+            OSlideWidgetsView(step: .widgets, scope: scope),
+            OSlidePreloaderView(step: .preloader, scope: scope),
+            planView
         ]
     }()
+    
+    private lazy var scope = OnboardingScope()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
