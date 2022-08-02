@@ -67,11 +67,11 @@ private extension OStepView {
     
     func fillViews() {
         views.forEach {
-            $0.backgroundColor = UIColor(integralRed: 76, green: 99, blue: 130, alpha: 0.1)
+            $0.backgroundColor = Appearance.greyColor.withAlphaComponent(0.1)
         }
         
         views.prefix(step).forEach {
-            $0.backgroundColor = UIColor(integralRed: 224, green: 117, blue: 140)
+            $0.backgroundColor = Appearance.mainColor
         }
     }
 }

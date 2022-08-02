@@ -31,7 +31,7 @@ final class OImproveCell: CircleView {
 private extension OImproveCell {
     func update() {
         backgroundColor = isSelected ? Appearance.mainColor : UIColor.white
-        label.textColor = isSelected ? UIColor.white : UIColor.black
+        label.textColor = isSelected ? UIColor.white : Appearance.blackColor
     }
 }
 
@@ -51,8 +51,8 @@ private extension OImproveCell {
     func makeLabel() -> UILabel {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = Fonts.SFProRounded.semiBold(size: 17.scale)
-        view.textColor = UIColor.black
+        view.font = Fonts.SFProRounded.semiBold(size: 15.scale)
+        view.textColor = Appearance.blackColor
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

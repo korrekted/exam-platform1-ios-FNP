@@ -11,7 +11,7 @@ final class OWhenStudyCell: UIView {
     var isSelected = false {
         didSet {
             layer.borderWidth = isSelected ? 4.scale : 0
-            layer.borderColor = isSelected ? UIColor(integralRed: 245, green: 174, blue: 120).cgColor : UIColor.clear.cgColor
+            layer.borderColor = isSelected ? Appearance.mainColor.cgColor : UIColor.clear.cgColor
         }
     }
     
@@ -22,7 +22,7 @@ final class OWhenStudyCell: UIView {
     var title: String = "" {
         didSet {
             let attrs = TextAttributes()
-                .textColor(UIColor.black)
+                .textColor(Appearance.blackColor)
                 .font(Fonts.SFProRounded.regular(size: 20.scale))
                 .lineHeight(24.scale)
             titleLabel.attributedText = title.attributed(with: attrs)
