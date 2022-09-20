@@ -51,7 +51,7 @@ private extension OImproveCell {
     func makeLabel() -> UILabel {
         let view = UILabel()
         view.numberOfLines = 0
-        view.font = Fonts.SFProRounded.semiBold(size: 15.scale)
+        view.font = Fonts.SFProRounded.semiBold(size: 17.scale)
         view.textColor = Appearance.blackColor
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
